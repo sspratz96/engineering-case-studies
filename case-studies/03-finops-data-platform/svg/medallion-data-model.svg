@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1130" height="610" viewBox="0 0 1130 610" role="img" aria-label="Medallion Data Model">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <text x="565.0" y="42" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">Medallion Data Model</text>
+  <text x="565.0" y="72" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="400" fill="#6B7280">Bronze, silver and gold layers for reliable FinOps data consumption</text>
+  
+  <g filter="url(#shadow)">
+    
+    <rect x="80" y="135" width="270" height="75" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="215.0" y="167.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Cloud Billing Sources</text><text x="215.0" y="189.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6B7280">AWS CUR / OCI / Pricing</text>
+    
+    
+    <rect x="80" y="280" width="270" height="80" rx="14" fill="#FEF3C7" stroke="#FBBF24" stroke-width="1.5"/>
+    <text x="215.0" y="315.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Bronze Layer</text><text x="215.0" y="337.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6B7280">Raw and lightly processed provider data</text>
+    
+    
+    <rect x="430" y="280" width="270" height="80" rx="14" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+    <text x="565.0" y="315.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Silver Layer</text><text x="565.0" y="337.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6B7280">Standardized materialized views</text>
+    
+    
+    <rect x="780" y="280" width="270" height="80" rx="14" fill="#FEF9C3" stroke="#FACC15" stroke-width="1.5"/>
+    <text x="915.0" y="315.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Gold Layer</text><text x="915.0" y="337.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6B7280">Business-ready FinOps datasets</text>
+    
+    
+    <rect x="430" y="455" width="270" height="75" rx="14" fill="#ECFDF5" stroke="#86EFAC" stroke-width="1.5"/>
+    <text x="565.0" y="487.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Consumption Layer</text><text x="565.0" y="509.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="400" fill="#6B7280">Portal, dashboards and AI workflows</text>
+    
+  </g>
+  <line x1="215" y1="210" x2="215" y2="280" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="350" y1="320" x2="430" y2="320" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="700" y1="320" x2="780" y2="320" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="915" y1="360" x2="565" y2="455" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="390" y="306" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Transform</text>
+  <text x="740" y="306" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" fill="#6B7280">Curate</text>
+
+</svg>
