@@ -156,11 +156,9 @@ The migration followed four stages.
 
 ```mermaid
 flowchart LR
-
-A[Fragmented Data Sources]
---> B[Centralized Data Ingestion]
---> C[Governed Data Platform]
---> D[Business Applications & Analytics]
+    A[Fragmented Data Sources] --> B[Centralized Data Ingestion]
+    B --> C[Governed Data Platform]
+    C --> D[Business Applications & Analytics]
 ```
 
 Each stage generated immediate business value while reducing technical debt and increasing organizational adoption.
