@@ -63,22 +63,9 @@ The platform followed a cloud-native ETL architecture.
 
 Mage was used to orchestrate data pipelines running on AWS ECS, while PostgreSQL/RDS acted as the centralized analytical database.
 
-```mermaid
-flowchart TD
-    AWS_CUR["AWS CUR / Athena"] --> Mage["Mage Pipelines on AWS ECS"]
-    OCI["OCI Billing Data"] --> Mage
-    Pricing["AWS Pricing API"] --> Mage
-
-    Mage --> RDS["PostgreSQL / RDS"]
-
-    RDS --> Bronze["Bronze Layer"]
-    Bronze --> Silver["Silver Layer"]
-    Silver --> Gold["Gold Layer"]
-
-    Gold --> Portal["Customer Portal"]
-    Gold --> Dashboards["Dashboards"]
-    Gold --> AI["AI Agent / MCP"]
-```
+<p align="center">
+  <img src="./diagrams/svg/platform-architecture.svg" alt="FinOps platform architecture" width="950">
+</p>
 
 This architecture separated ingestion, transformation and consumption responsibilities.
 
@@ -89,6 +76,10 @@ Instead of allowing downstream systems to consume raw provider data directly, th
 # Medallion Data Architecture
 
 The database was organized using a medallion-style architecture.
+
+<p align="center">
+  <img src="./diagrams/svg/medallion-data-model.svg" alt="Medallion data architecture for FinOps data platform" width="950">
+</p>
 
 This structure separated raw ingestion, standardized transformations and business-ready analytical outputs.
 
@@ -166,15 +157,9 @@ Refreshing them in the wrong order could lead to incomplete or inconsistent down
 
 To solve this, the refresh process detected dependencies between database objects and calculated the correct execution order using a topological sort.
 
-```mermaid
-flowchart LR
-    Bronze["Bronze Tables"] --> MV1["Silver Materialized Views"]
-    MV1 --> MV2["Dependent Materialized Views"]
-    MV2 --> Gold["Gold Tables"]
-
-    Dependency["Dependency Detection"] --> Sort["Topological Sort"]
-    Sort --> Refresh["Ordered Refresh Execution"]
-```
+<p align="center">
+  <img src="./diagrams/svg/materialized-view-refresh.svg" alt="Materialized view refresh strategy using dependency detection and topological sorting" width="950">
+</p>
 
 This ensured that downstream views were refreshed only after their upstream dependencies had been updated.
 
@@ -183,6 +168,10 @@ This ensured that downstream views were refreshed only after their upstream depe
 # AWS Pricing Integration
 
 The platform also included utilities for extracting AWS pricing information.
+
+<p align="center">
+  <img src="./diagrams/svg/pricing-integration.svg" alt="AWS pricing integration for FinOps analytics" width="950">
+</p>
 
 This was important because FinOps analytics often require more than usage and cost data.
 
