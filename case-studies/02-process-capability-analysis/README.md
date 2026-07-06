@@ -1,6 +1,6 @@
 # Process Capability Analysis Tool
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Statistical%20Analysis-success)
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20Streamlit-orange)
 ![Decision](https://img.shields.io/badge/decision-Build%20vs%20Buy-lightgrey)
@@ -77,10 +77,6 @@ Minitab provided the statistical functionality needed by the team, but the enter
 
 The decision to build an internal alternative was based on several considerations.
 
-<p align="center">
-  <img src="./diagrams/svg/build-vs-buy-decision.svg" alt="Build vs buy decision for process capability analysis tool" width="900">
-</p>
-
 ## Design Principles
 
 The internal tool was guided by a few practical design principles.
@@ -149,9 +145,15 @@ It was designed to solve one clearly defined operational problem.
 
 The application followed a simple analytical workflow.
 
-<p align="center">
-  <img src="./diagrams/svg/application-workflow.svg" alt="Application workflow for process capability analysis" width="900">
-</p>
+```mermaid
+flowchart TD
+    A["Upload Process Data"] --> B["Select Numeric Variable"]
+    B --> C["Define Specification Limits"]
+    C --> D["Evaluate Distribution"]
+    D --> E["Calculate Capability Metrics"]
+    E --> F["Visualize Results"]
+    F --> G["Simulate Target Scenarios"]
+```
 
 The workflow was designed to be understandable for users who needed reliable analytical results without interacting directly with Python code or statistical libraries.
 
@@ -174,9 +176,13 @@ Core components included:
 
 Instead of building a complex multi-service system, the application was designed as a focused analytical interface around a specific statistical workflow.
 
-<p align="center">
-  <img src="./diagrams/svg/statistical-analysis-flow.svg" alt="Statistical analysis flow from process data to decision support" width="950">
-</p>
+```mermaid
+flowchart LR
+    Input["CSV / Excel Input"] --> Processing["Data Processing"]
+    Processing --> Statistics["Statistical Analysis"]
+    Statistics --> Visualization["Visual Outputs"]
+    Visualization --> Decision["Process Decision Support"]
+```
 
 ---
 
