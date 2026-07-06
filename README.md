@@ -22,35 +22,12 @@ The goal is to share engineering thinking behind building scalable data platform
 
 ## Case Studies
 
-### 01 · Building a Single Source of Truth
-
-How fragmented spreadsheets and disconnected systems evolved into a trusted enterprise data platform.
-
-Status: 🚧 In Progress
-
----
-
-### 02 · Process Capability Analysis
-
-Building an internal statistical analysis tool as an alternative to expensive commercial software.
-
-Status: Planned
-
----
-
-### 03 · FinOps Data Platform
-
-Designing cloud-native data pipelines for financial analytics using the FOCUS specification.
-
-Status: Planned
-
----
-
-### 04 · Enterprise AI Workflows
-
-Using modern LLMs to augment business processes while keeping humans in the decision loop.
-
-Status: Planned
+| # | Case Study | Status | Focus |
+|---|---|---|---|
+| 01 | [Building a Single Source of Truth](./case-studies/01-building-a-single-source-of-truth/) | Completed v1.0 | Data platforms, governance, automation |
+| 02 | [Process Capability Analysis](./case-studies/02-process-capability-analysis/) | Planned | Statistical analysis, Python, UX |
+| 03 | [FinOps Data Platform](./case-studies/03-finops-data-platform/) | Planned | FinOps, cloud cost analytics, data pipelines |
+| 04 | [Enterprise AI Workflows](./case-studies/04-enterprise-ai-workflows/) | Planned | LLMs, MCP, enterprise automation |
 
 ---
 
