@@ -33,6 +33,10 @@ Different departments frequently consume information from different sources:
 - Department-specific databases
 - Ad-hoc exports
 
+<p align="center">
+  <img src="./diagrams/svg/current-state.svg" alt="Current state fragmented data architecture" width="900">
+</p>
+
 Although every dataset may be technically correct, they often represent different moments in time, different business rules, or different transformation logic.
 
 As a consequence:
@@ -120,24 +124,9 @@ The technical platform was introduced together with operational improvements.
 
 Rather than forcing organizational change, adoption was driven by replacing repetitive manual tasks with standardized workflows.
 
-```mermaid
-flowchart TD
-
-Manual[Manual Process]
---> Automation[Automation]
-
-Automation
---> BetterData[Higher Data Quality]
-
-BetterData
---> Trust[Increased Trust]
-
-Trust
---> Adoption[User Adoption]
-
-Adoption
---> SingleSource[Single Source of Truth]
-```
+<p align="center">
+  <img src="./diagrams/svg/adoption-strategy.svg" alt="Adoption strategy from automation to trust" width="900">
+</p>
 
 ---
 
@@ -145,25 +134,9 @@ Adoption
 
 The solution follows a centralized data platform architecture where operational systems act as data producers while downstream applications consume standardized and governed datasets.
 
-```mermaid
-flowchart LR
-
-    ERP[ERP]
-    Sheets[Spreadsheets]
-    CSV[CSV Files]
-
-    ERP --> ING
-    Sheets --> ING
-    CSV --> ING
-
-    ING[Data Ingestion]
-
-    ING --> PLATFORM[(Centralized Data Platform)]
-
-    PLATFORM --> DASH[Dashboards]
-    PLATFORM --> APPS[Internal Applications]
-    PLATFORM --> ML[ML Models]
-```
+<p align="center">
+  <img src="./diagrams/svg/target-architecture.svg" alt="Target governed data platform architecture" width="950">
+</p>
 
 The architecture separates operational systems from analytical consumers.
 
