@@ -62,3 +62,81 @@ Over time, these independent solutions create a complex ecosystem where multiple
 The technical challenge is therefore only one part of the problem.
 
 The organizational challenge is enabling different teams to converge toward a common source of trusted information.
+
+# Design Principles
+
+Before selecting technologies or defining the architecture, a set of engineering principles guided every design decision.
+
+## 1. One Trusted Source
+
+Business information should originate from a single governed source.
+
+Every report, dashboard, automation, or internal application should consume data from the same platform rather than maintaining independent datasets.
+
+---
+
+## 2. Automate Data Collection
+
+Whenever possible, manual data entry should be replaced by automated ingestion processes.
+
+Reducing manual intervention improves data quality while allowing business users to focus on operational tasks instead of administrative work.
+
+---
+
+## 3. Governance Before Analytics
+
+Analytics only become valuable when everyone agrees on the meaning of the underlying data.
+
+Business definitions, ownership, and validation rules should therefore be established before building reports or machine learning models.
+
+---
+
+## 4. Build Once, Reuse Everywhere
+
+Business logic should exist only once.
+
+Transformations should be centralized so that every downstream consumer works with the same validated information.
+
+---
+
+## 5. Reduce Operational Friction
+
+Technology should simplify existing workflows.
+
+The easier a new system is to use, the faster it becomes part of the organization's daily operations.
+
+---
+
+# High-Level Architecture
+
+The solution follows a centralized data platform architecture where operational systems act as data producers while downstream applications consume standardized and governed datasets.
+
+```text
+                Operational Systems
+
+         ERP      Spreadsheets      CSV Files
+             \         |          /
+              \        |         /
+
+             Data Ingestion Layer
+
+                      │
+
+                      ▼
+
+          Centralized Data Platform
+     (Storage + Governance + ETL)
+
+                      │
+
+      ┌───────────────┼────────────────┐
+      │               │                │
+
+ Dashboards     Internal Tools     ML Models
+```
+
+The architecture separates operational systems from analytical consumers.
+
+Instead of allowing each department to maintain its own transformation logic, every downstream system consumes standardized datasets generated from a common platform.
+
+This approach improves consistency, reduces maintenance effort, and creates a scalable foundation for future data products.
