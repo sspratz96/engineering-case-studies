@@ -1,6 +1,9 @@
 # Process Capability Analysis Tool
 
-**Status:** In Progress
+![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Focus](https://img.shields.io/badge/focus-Statistical%20Analysis-success)
+![Stack](https://img.shields.io/badge/stack-Python%20%7C%20Streamlit-orange)
+![Decision](https://img.shields.io/badge/decision-Build%20vs%20Buy-lightgrey)
 
 ## Executive Summary
 
@@ -47,6 +50,22 @@ For the production team, the main challenges were:
 The objective was not to replicate every feature of a professional statistical suite.
 
 The objective was to build a practical tool that covered the specific analysis workflow required by the team.
+
+---
+
+# Engineering Challenge
+
+The main challenge was not only statistical.
+
+The tool needed to translate a specialized analytical workflow into a simple interface that production users could understand and apply consistently.
+
+This required balancing three constraints:
+
+- statistical correctness
+- usability for non-programmers
+- cost reduction compared to commercial software
+
+The solution had to be narrow enough to remain maintainable, but complete enough to support real process analysis decisions.
 
 ---
 
@@ -100,12 +119,12 @@ The application followed a simple analytical workflow.
 
 ```mermaid
 flowchart TD
-    A[Upload Process Data] --> B[Select Numeric Variable]
-    B --> C[Define Specification Limits]
-    C --> D[Evaluate Distribution]
-    D --> E[Calculate Capability Metrics]
-    E --> F[Visualize Results]
-    F --> G[Simulate Target Scenarios]
+    A["Upload Process Data"] --> B["Select Numeric Variable"]
+    B --> C["Define Specification Limits"]
+    C --> D["Evaluate Distribution"]
+    D --> E["Calculate Capability Metrics"]
+    E --> F["Visualize Results"]
+    F --> G["Simulate Target Scenarios"]
 ```
 
 The workflow was designed to be understandable for users who needed reliable analytical results without interacting directly with Python code or statistical libraries.
@@ -147,6 +166,18 @@ These included:
 - simulating target scenarios through Monte Carlo methods
 
 The analytical goal was to support practical engineering decisions rather than provide a general-purpose statistics environment.
+
+---
+
+# Key Engineering Decision
+
+The most important engineering decision was to limit the scope of the application.
+
+A broader tool would have been harder to validate, maintain and explain.
+
+By focusing on one specific workflow, the application could deliver value quickly while avoiding unnecessary complexity.
+
+This made the internal solution easier to justify as an alternative to expensive commercial software for the specific operational need.
 
 ---
 
