@@ -77,6 +77,10 @@ Minitab provided the statistical functionality needed by the team, but the enter
 
 The decision to build an internal alternative was based on several considerations.
 
+<p align="center">
+  <img src="./diagrams/svg/build-vs-buy-decision.svg" alt="Build vs buy decision for process capability analysis tool" width="900">
+</p>
+
 ## Design Principles
 
 The internal tool was guided by a few practical design principles.
@@ -145,15 +149,9 @@ It was designed to solve one clearly defined operational problem.
 
 The application followed a simple analytical workflow.
 
-```mermaid
-flowchart TD
-    A["Upload Process Data"] --> B["Select Numeric Variable"]
-    B --> C["Define Specification Limits"]
-    C --> D["Evaluate Distribution"]
-    D --> E["Calculate Capability Metrics"]
-    E --> F["Visualize Results"]
-    F --> G["Simulate Target Scenarios"]
-```
+<p align="center">
+  <img src="./diagrams/svg/application-workflow.svg" alt="Application workflow for process capability analysis" width="900">
+</p>
 
 The workflow was designed to be understandable for users who needed reliable analytical results without interacting directly with Python code or statistical libraries.
 
@@ -176,13 +174,9 @@ Core components included:
 
 Instead of building a complex multi-service system, the application was designed as a focused analytical interface around a specific statistical workflow.
 
-```mermaid
-flowchart LR
-    Input["CSV / Excel Input"] --> Processing["Data Processing"]
-    Processing --> Statistics["Statistical Analysis"]
-    Statistics --> Visualization["Visual Outputs"]
-    Visualization --> Decision["Process Decision Support"]
-```
+<p align="center">
+  <img src="./diagrams/svg/statistical-analysis-flow.svg" alt="Statistical analysis flow from process data to decision support" width="950">
+</p>
 
 ---
 

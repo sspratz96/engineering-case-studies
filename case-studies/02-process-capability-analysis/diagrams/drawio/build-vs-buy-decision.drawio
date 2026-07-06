@@ -1,0 +1,16 @@
+<mxfile host="app.diagrams.net" modified="2026-07-06T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram name="Build vs Buy Decision" id="build-vs-buy-decision.drawio">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="Build vs Buy Decision" style="text;html=1;strokeColor=none;fillColor=none;fontSize=24;fontStyle=1;fontFamily=Inter;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="900" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Editable Draw.io source. Use the matching SVG export in ../svg for the README." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F9FAFB;strokeColor=#D1D5DB;fontFamily=Inter;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="520" height="80" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

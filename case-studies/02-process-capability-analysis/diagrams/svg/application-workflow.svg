@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="560" viewBox="0 0 940 560" role="img" aria-label="Application Workflow">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#374151"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <text x="470.0" y="42" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">Application Workflow</text>
+  <text x="470.0" y="72" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="400" fill="#6B7280">From uploaded process data to repeatable capability analysis</text>
+  
+    <rect x="90" y="130" width="300" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="240.0" y="165.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Upload Process Data</text>
+    
+<text x="240" y="208" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">CSV / Excel input</text>
+<line x1="240" y1="188" x2="240" y2="220" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="90" y="220" width="300" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="240.0" y="255.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Select Numeric Variable</text>
+    
+<text x="240" y="298" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Choose process measure</text>
+<line x1="240" y1="278" x2="240" y2="310" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="90" y="310" width="300" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="240.0" y="345.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Define Specification Limits</text>
+    
+<text x="240" y="388" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Set LSL / USL</text>
+<line x1="240" y1="368" x2="240" y2="400" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="90" y="400" width="300" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="240.0" y="435.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Evaluate Distribution</text>
+    
+<text x="240" y="478" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Normality and behavior</text>
+
+    <rect x="530" y="175" width="320" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="690.0" y="210.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Calculate Capability Metrics</text>
+    
+<text x="690" y="253" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Cp, Cpk and related indicators</text>
+<line x1="690" y1="233" x2="690" y2="285" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="530" y="285" width="320" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="690.0" y="320.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Visualize Results</text>
+    
+<text x="690" y="363" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Charts and interpretation</text>
+<line x1="690" y1="343" x2="690" y2="395" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <rect x="530" y="395" width="320" height="58" rx="14" fill="#F9FAFB" stroke="#D1D5DB" stroke-width="1.5"/>
+    <text x="690.0" y="430.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#111827">Simulate Target Scenarios</text>
+    
+<text x="690" y="473" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500" fill="#6B7280">Monte Carlo exploration</text>
+<line x1="390" y1="429" x2="530" y2="205" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
