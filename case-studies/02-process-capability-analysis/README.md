@@ -100,18 +100,11 @@ The application followed a simple analytical workflow.
 
 ```mermaid
 flowchart TD
-
-    A[Upload Process Data]
-    --> B[Select Numeric Variable]
-
+    A[Upload Process Data] --> B[Select Numeric Variable]
     B --> C[Define Specification Limits]
-
     C --> D[Evaluate Distribution]
-
     D --> E[Calculate Capability Metrics]
-
     E --> F[Visualize Results]
-
     F --> G[Simulate Target Scenarios]
 ```
 
