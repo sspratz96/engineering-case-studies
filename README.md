@@ -25,7 +25,7 @@ The goal is to share engineering thinking behind building scalable data platform
 | # | Case Study | Status | Focus |
 |---|---|---|---|
 | 01 | [Building a Single Source of Truth](./case-studies/01-building-a-single-source-of-truth/) | Completed v1.0 | Data platforms, governance, automation |
-| 02 | [Process Capability Analysis](./case-studies/02-process-capability-analysis/) | Planned | Statistical analysis, Python, UX |
+| 02 | [Process Capability Analysis](./case-studies/02-process-capability-analysis/) | In Progress | Statistical analysis, Python, UX |
 | 03 | [FinOps Data Platform](./case-studies/03-finops-data-platform/) | Planned | FinOps, cloud cost analytics, data pipelines |
 | 04 | [Enterprise AI Workflows](./case-studies/04-enterprise-ai-workflows/) | Planned | LLMs, MCP, enterprise automation |
 
