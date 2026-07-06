@@ -1,5 +1,10 @@
 # Building a Single Source of Truth
 
+![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Focus](https://img.shields.io/badge/focus-Data%20Engineering-success)
+![Architecture](https://img.shields.io/badge/architecture-Cloud%20Native-orange)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 ## Executive Summary
 
 As organizations grow, data naturally becomes fragmented.
@@ -63,6 +68,8 @@ The technical challenge is therefore only one part of the problem.
 
 The organizational challenge is enabling different teams to converge toward a common source of trusted information.
 
+---
+
 # Design Principles
 
 Before selecting technologies or defining the architecture, a set of engineering principles guided every design decision.
@@ -107,32 +114,55 @@ The easier a new system is to use, the faster it becomes part of the organizatio
 
 ---
 
+## Adoption Strategy
+
+The technical platform was introduced together with operational improvements.
+
+Rather than forcing organizational change, adoption was driven by replacing repetitive manual tasks with standardized workflows.
+
+```mermaid
+flowchart TD
+
+Manual[Manual Process]
+--> Automation[Automation]
+
+Automation
+--> BetterData[Higher Data Quality]
+
+BetterData
+--> Trust[Increased Trust]
+
+Trust
+--> Adoption[User Adoption]
+
+Adoption
+--> SingleSource[Single Source of Truth]
+```
+
+---
+
 # High-Level Architecture
 
 The solution follows a centralized data platform architecture where operational systems act as data producers while downstream applications consume standardized and governed datasets.
 
-```text
-                Operational Systems
+```mermaid
+flowchart LR
 
-         ERP      Spreadsheets      CSV Files
-             \         |          /
-              \        |         /
+    ERP[ERP]
+    Sheets[Spreadsheets]
+    CSV[CSV Files]
 
-             Data Ingestion Layer
+    ERP --> ING
+    Sheets --> ING
+    CSV --> ING
 
-                      │
+    ING[Data Ingestion]
 
-                      ▼
+    ING --> PLATFORM[(Centralized Data Platform)]
 
-          Centralized Data Platform
-     (Storage + Governance + ETL)
-
-                      │
-
-      ┌───────────────┼────────────────┐
-      │               │                │
-
- Dashboards     Internal Tools     ML Models
+    PLATFORM --> DASH[Dashboards]
+    PLATFORM --> APPS[Internal Applications]
+    PLATFORM --> ML[ML Models]
 ```
 
 The architecture separates operational systems from analytical consumers.
@@ -141,6 +171,26 @@ Instead of allowing each department to maintain its own transformation logic, ev
 
 This approach improves consistency, reduces maintenance effort, and creates a scalable foundation for future data products.
 
+---
+
+# Migration Strategy
+
+Instead of replacing every operational process simultaneously, the platform evolved through incremental improvements.
+
+Each delivery solved an existing business problem while reinforcing the long-term architecture.
+
+The migration followed four stages.
+
+```mermaid
+flowchart LR
+
+A[Fragmented Data Sources]
+--> B[Centralized Data Ingestion]
+--> C[Governed Data Platform]
+--> D[Business Applications & Analytics]
+```
+
+Each stage generated immediate business value while reducing technical debt and increasing organizational adoption.
 
 ---
 
@@ -214,13 +264,19 @@ Google Cloud Platform (GCP) was selected as the primary cloud provider to suppor
 
 ## Backend
 
-The backend was implemented in Python following an API-first architecture responsible for business logic, authentication, workflow orchestration, scheduled processes and data access.
+The backend was implemented in Python following an API-first architecture responsible for:
+
+- business logic
+- authentication and authorization
+- workflow orchestration
+- scheduled processes
+- data access
 
 ---
 
 ## Frontend
 
-A modern web interface provided a consistent user experience across operational areas while reducing dependence on spreadsheets and manual processes.
+A modern web interface was developed to provide a consistent user experience across operational areas while reducing dependence on spreadsheets and manual processes.
 
 ---
 
@@ -237,6 +293,8 @@ Application data, workflows and business entities were modeled around shared def
 Deployment pipelines were fully automated using GitHub Actions.
 
 Separate deployment workflows supported development and production environments, allowing new features to be validated before production releases.
+
+---
 
 # Results
 
