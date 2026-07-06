@@ -140,3 +140,100 @@ The architecture separates operational systems from analytical consumers.
 Instead of allowing each department to maintain its own transformation logic, every downstream system consumes standardized datasets generated from a common platform.
 
 This approach improves consistency, reduces maintenance effort, and creates a scalable foundation for future data products.
+
+
+---
+
+# Implementation Strategy
+
+Building a Single Source of Truth was not approached as a single migration project.
+
+Instead, the strategy focused on gradually replacing fragmented processes while continuously increasing the value delivered to business users.
+
+Rather than forcing every department to adopt a completely new workflow, each implementation solved an existing operational problem while contributing to a broader architectural vision.
+
+This incremental approach reduced resistance to change and allowed the platform to grow organically.
+
+The implementation strategy was based on four major pillars.
+
+## 1. Centralize Data
+
+The first objective was to eliminate isolated datasets spread across operational systems, spreadsheets and manually maintained reports.
+
+Data ingestion pipelines consolidated information into a centralized platform where business entities could be modeled consistently.
+
+Instead of asking which spreadsheet contained the correct information, every process started from the same governed datasets.
+
+---
+
+## 2. Standardize Business Logic
+
+Different departments frequently calculated the same business metrics using different transformation rules.
+
+Business logic was progressively centralized so that calculations were implemented once and reused everywhere.
+
+This reduced inconsistencies between reports while significantly lowering long-term maintenance effort.
+
+---
+
+## 3. Automate Operational Processes
+
+Automation was never considered the final objective.
+
+Instead, it became the mechanism for improving data quality while reducing repetitive manual work.
+
+Each automated workflow not only removed operational effort, but also generated cleaner and more reliable information for the centralized platform.
+
+As adoption increased, data quality improved naturally because users interacted directly with standardized processes rather than maintaining independent records.
+
+---
+
+## 4. Enable Future Systems
+
+The platform was designed as an engineering foundation rather than a reporting solution.
+
+Once trusted datasets became available, new internal applications, dashboards and analytical models could be developed without rebuilding data pipelines for every project.
+
+This significantly reduced the complexity of future software initiatives while allowing different systems to share the same business definitions.
+
+---
+
+# Technology Decisions
+
+Technology selection followed architectural requirements rather than driving them.
+
+The objective was to prioritize scalability, maintainability and simplicity over adopting technologies solely because they were popular.
+
+The platform was intentionally built using a modular architecture where each component had a clearly defined responsibility.
+
+## Cloud Infrastructure
+
+Google Cloud Platform (GCP) was selected as the primary cloud provider to support scalable deployments, managed services and centralized infrastructure.
+
+---
+
+## Backend
+
+The backend was implemented in Python following an API-first architecture responsible for business logic, authentication, workflow orchestration, scheduled processes and data access.
+
+---
+
+## Frontend
+
+A modern web interface provided a consistent user experience across operational areas while reducing dependence on spreadsheets and manual processes.
+
+---
+
+## Database
+
+A centralized relational database became the operational foundation of the platform.
+
+Application data, workflows and business entities were modeled around shared definitions instead of department-specific structures.
+
+---
+
+## CI/CD
+
+Deployment pipelines were fully automated using GitHub Actions.
+
+Separate deployment workflows supported development and production environments, allowing new features to be validated before production releases.
