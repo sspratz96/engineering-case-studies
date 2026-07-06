@@ -77,6 +77,34 @@ Minitab provided the statistical functionality needed by the team, but the enter
 
 The decision to build an internal alternative was based on several considerations.
 
+## Design Principles
+
+The internal tool was guided by a few practical design principles.
+
+### 1. Solve the Specific Workflow
+
+The objective was not to recreate an entire statistical software package.
+
+The tool focused only on the process capability workflow required by the production team.
+
+### 2. Keep the Interface Simple
+
+Users needed to move from data input to analytical result without interacting directly with Python code.
+
+The interface was therefore designed around the sequence of decisions users needed to make.
+
+### 3. Make the Analysis Repeatable
+
+A standardized workflow reduced variation in how analyses were performed and made results easier to compare.
+
+### 4. Avoid Overengineering
+
+The tool was intentionally lightweight.
+
+A simple application was more appropriate than a complex architecture for this use case.
+
+---
+
 ## Buy
 
 A commercial tool offered:
@@ -133,21 +161,28 @@ The workflow was designed to be understandable for users who needed reliable ana
 
 # Technology Stack
 
-The tool was implemented as a lightweight Python application.
+The tool was implemented as a lightweight Python application using Streamlit.
+
+The architecture prioritized simplicity and fast delivery over unnecessary system complexity.
 
 Core components included:
 
-- Python
-- Streamlit
-- Pandas
-- NumPy
-- SciPy
-- Matplotlib / Plotly
-- CSV or Excel-based data input
+- **Streamlit** for the user interface
+- **Pandas** for tabular data handling
+- **NumPy** for numerical operations
+- **SciPy** for statistical calculations
+- **Matplotlib / Plotly** for visualizations
+- **CSV / Excel inputs** for process data loading
 
-The architecture prioritized simplicity.
+Instead of building a complex multi-service system, the application was designed as a focused analytical interface around a specific statistical workflow.
 
-Instead of building a complex multi-service system, the application was designed as a focused analytical interface around a specific statistical process.
+```mermaid
+flowchart LR
+    Input["CSV / Excel Input"] --> Processing["Data Processing"]
+    Processing --> Statistics["Statistical Analysis"]
+    Statistics --> Visualization["Visual Outputs"]
+    Visualization --> Decision["Process Decision Support"]
+```
 
 ---
 
