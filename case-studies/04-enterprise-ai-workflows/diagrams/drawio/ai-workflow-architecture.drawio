@@ -1,17 +1,14 @@
 <mxfile host="app.diagrams.net">
   <diagram name="AI Workflow Architecture">
-    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="520" math="0" shadow="0">
+    <mxGraphModel dx="1240" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="560" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
         <mxCell id="note" value="AI Workflow Architecture
 
-Editable source placeholder.
-Use the SVG as the rendered diagram.
-
-Flow edges:
-0 -&gt; 1\n1 -&gt; 2\n2 -&gt; 4\n3 -&gt; 4\n4 -&gt; 5\n5 -&gt; 6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9fafb;strokeColor=#d1d5db;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="80" y="80" width="940" height="360" as="geometry"/>
+Diagram source for rendered SVG.
+Replace/edit in diagrams.net if needed." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9fafb;strokeColor=#d1d5db;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="1080" height="400" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
