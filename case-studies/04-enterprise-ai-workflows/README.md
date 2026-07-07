@@ -1,6 +1,6 @@
 # Enterprise AI Workflows on Governed Data
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Enterprise%20AI-success)
 ![Architecture](https://img.shields.io/badge/architecture-MCP%20%7C%20Semantic%20Context-orange)
 ![Stack](https://img.shields.io/badge/stack-LLM%20%7C%20MCP%20%7C%20PostgreSQL-lightgrey)
@@ -17,7 +17,11 @@ The project demonstrated an important principle: model quality alone is not enou
 
 Even a strong language model produces poor answers when the underlying data is incomplete, poorly modeled or missing context.
 
-To reduce hallucinations and avoid invented metrics, the workflow relied on curated gold datasets, semantic table descriptions and column-level metadata that helped the MCP layer understand what each table represented and when it should be used.
+To reduce hallucinations and avoid invented metrics, the workflow relied on curated gold datasets, semantic table descriptions and column-level metadata that helped the MCP layer understand what each table represented, which metrics were available and when each table should be used.
+
+The core engineering challenge was therefore not prompt writing.
+
+It was designing the data and context layer that made the AI workflow reliable.
 
 ---
 
@@ -210,57 +214,81 @@ This reduced the risk of inconsistent calculations.
 
 # Key Engineering Decisions
 
-## 1. Use Metadata as Context
+## 1. Build AI on Governed Data, Not Raw Data
 
-Schema, table and column descriptions were stored as part of the data platform and exposed to the MCP layer.
+The AI assistant was designed to work with curated gold datasets instead of raw billing exports.
 
-This gave the model a structured understanding of the database.
+Raw cloud billing data is detailed, provider-specific and difficult to interpret safely through natural language.
 
----
-
-## 2. Build on the Gold Layer
-
-The AI workflow was built on top of curated FinOps tables rather than raw billing exports.
-
-This improved consistency and reduced the amount of interpretation required from the model.
+Gold tables provided a more stable interface because they already contained cleaned, standardized and business-ready information.
 
 ---
 
-## 3. Treat Hallucination as a Data Problem
+## 2. Treat Metadata as Runtime Context
 
-Hallucination was not treated only as a model limitation.
+Schema, table and column descriptions were not treated only as documentation.
 
-It was also treated as a data-quality, metadata and context-design problem.
+They became part of the runtime context exposed to the MCP layer.
 
-Better context reduced the probability that the model would invent metrics or misuse tables.
+This allowed the model to understand what each table represented, what each column meant and which data sources were appropriate for specific questions.
 
 ---
 
-## 4. Keep Business Logic in the Data Platform
+## 3. Reduce Hallucination Through Data Design
 
-Business definitions and analytical logic were kept in the data platform instead of being recreated inside prompts.
+The team learned that hallucination was not only a model problem.
 
-This made the workflow more maintainable and reduced inconsistencies.
+It was also a data-quality and context-design problem.
+
+When the model lacked clear input, it could invent metrics, confuse columns or select the wrong table.
+
+Improving metadata, table descriptions and business definitions reduced ambiguity before the model started reasoning.
+
+---
+
+## 4. Separate Business Logic From Prompts
+
+Business logic and metric definitions were kept in the data platform instead of being recreated inside prompts.
+
+This made the workflow easier to maintain and reduced the risk of inconsistent calculations.
+
+The prompt could guide the assistant, but the data platform remained the source of truth.
+
+---
+
+## 5. Use MCP as a Controlled Context Interface
+
+The MCP layer acted as a controlled interface between the assistant and the data platform.
+
+It exposed curated data and structured metadata without turning the model into an unrestricted database client.
+
+This helped keep the AI workflow aligned with governed data access patterns.
 
 ---
 
 # Results
 
-The workflow demonstrated that enterprise AI systems depend on governed data foundations.
+The workflow showed that enterprise AI systems become more reliable when they are built on top of strong data foundations.
 
-The project helped show that an AI assistant can become more reliable when it is supported by:
+The main result was not simply an assistant capable of answering FinOps questions.
 
-- curated gold datasets
-- clear schema descriptions
-- table-level metadata
-- column-level metadata
-- controlled data access
-- explicit metric definitions
-- separation between raw data and business-ready data
+The value was proving that an AI assistant could be grounded through curated data, semantic metadata and controlled access patterns.
 
-The broader value was the connection between data engineering and AI enablement.
+The workflow improved the quality of AI-assisted analysis by giving the model:
 
-The AI assistant was only useful because the underlying data platform made the right information available in a structured and explainable way.
+- business-ready gold datasets
+- schema-level descriptions
+- table-level descriptions
+- column-level descriptions
+- clearer metric boundaries
+- better context for table selection
+- a safer interface through MCP
+
+This reduced the risk of fabricated metrics, incorrect table usage and unsupported answers.
+
+The broader outcome was a practical lesson for enterprise AI: the model is only one part of the system.
+
+Data quality, metadata quality and context design determine whether the workflow can be trusted.
 
 ---
 
@@ -287,6 +315,8 @@ This created a feedback loop between AI behavior and data platform quality.
 The quality of the model matters, but the quality of the data and context often matters more.
 
 A strong model with poor input produces poor output.
+
+Reliable AI workflows require reliable data workflows first.
 
 ---
 
@@ -319,6 +349,18 @@ Providing structured metadata reduces ambiguity and improves answer reliability.
 AI workflows should not bypass governance.
 
 They should build on top of governed data models, controlled access patterns and clear business definitions.
+
+---
+
+# Final Takeaway
+
+The most important lesson from this case was that enterprise AI is not only an LLM implementation challenge.
+
+It is a data engineering challenge.
+
+The assistant could only produce useful answers because the underlying platform provided curated data, semantic context and clearer boundaries around what the model could safely use.
+
+In practice, better data and better context were more important than simply choosing a stronger model.
 
 ---
 
