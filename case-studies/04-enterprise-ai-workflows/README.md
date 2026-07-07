@@ -87,18 +87,9 @@ This helped the assistant reason over governed data instead of guessing from raw
 
 The AI workflow was designed around governed access to curated data.
 
-```mermaid
-flowchart TD
-    Bronze["Bronze Layer<br/>Raw billing data"] --> Silver["Silver Layer<br/>Standardized views"]
-    Silver --> Gold["Gold Layer<br/>Business-ready datasets"]
-
-    Gold --> Metadata["Schema, Table and Column Metadata"]
-    Metadata --> MCP["MCP Context Layer"]
-    Gold --> MCP
-
-    MCP --> LLM["AI Assistant"]
-    LLM --> User["Business User"]
-```
+<p align="center">
+  <img src="./diagrams/svg/ai-workflow-architecture.svg" alt="Enterprise AI workflow architecture on governed data" width="950">
+</p>
 
 The gold layer provided reliable analytical data.
 
@@ -111,6 +102,10 @@ The MCP layer combined both to expose a safer context to the AI assistant.
 # Semantic Metadata Layer
 
 The semantic metadata layer was one of the most important parts of the workflow.
+
+<p align="center">
+  <img src="./diagrams/svg/semantic-context-layer.svg" alt="Semantic context layer for schemas tables columns and metrics" width="950">
+</p>
 
 Each relevant table was enriched with descriptions about:
 
@@ -148,6 +143,22 @@ This made them suitable for:
 - controlled analytical workflows
 
 The gold layer acted as the trusted interface between complex FinOps data and natural-language interaction.
+
+---
+
+# Governed Data Access
+
+The workflow separated natural-language interaction from direct database access.
+
+The assistant did not operate as an unrestricted database client.
+
+Instead, the MCP layer exposed curated data and metadata through a controlled context interface.
+
+<p align="center">
+  <img src="./diagrams/svg/governed-data-access.svg" alt="Governed data access pattern for enterprise AI workflows" width="950">
+</p>
+
+This design helped ensure that the model reasoned over approved data structures rather than raw or ambiguous sources.
 
 ---
 
@@ -250,6 +261,22 @@ The project helped show that an AI assistant can become more reliable when it is
 The broader value was the connection between data engineering and AI enablement.
 
 The AI assistant was only useful because the underlying data platform made the right information available in a structured and explainable way.
+
+---
+
+# Hallucination Reduction Loop
+
+The team learned that hallucination was not only a model behavior problem.
+
+It was also a context-design problem.
+
+When the assistant produced weak or ambiguous answers, the fix was often to improve the data model, table descriptions, column descriptions or available context.
+
+<p align="center">
+  <img src="./diagrams/svg/hallucination-reduction-loop.svg" alt="Hallucination reduction loop through metadata and feedback" width="950">
+</p>
+
+This created a feedback loop between AI behavior and data platform quality.
 
 ---
 
