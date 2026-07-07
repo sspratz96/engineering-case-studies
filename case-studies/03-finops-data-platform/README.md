@@ -1,6 +1,6 @@
 # FinOps Data Platform
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-FinOps-success)
 ![Architecture](https://img.shields.io/badge/architecture-Medallion%20Data%20Model-orange)
 ![Stack](https://img.shields.io/badge/stack-Mage%20%7C%20AWS%20ECS%20%7C%20PostgreSQL-lightgrey)
@@ -202,6 +202,52 @@ The platform used this direction to transform provider-specific billing data int
 The goal was not simply to store cloud invoices.
 
 The goal was to create a normalized FinOps data layer that could support cross-provider analysis, business reporting and future automation.
+
+---
+
+# Key Engineering Decisions
+
+## 1. Use a Medallion-Style Database Model
+
+The platform separated raw ingestion, standardized transformation and business-ready outputs into bronze, silver and gold layers.
+
+This made the data model easier to understand, reduced coupling between systems and prevented downstream consumers from depending directly on raw cloud billing structures.
+
+---
+
+## 2. Build a Profile-Based ETL Framework
+
+Instead of creating separate pipelines for every provider and extraction pattern, the ETL logic was organized around configurable profiles.
+
+Each profile defined how data should be extracted, filtered, partitioned and loaded depending on the provider and analytical need.
+
+This reduced duplication and made the platform easier to extend.
+
+---
+
+## 3. Use Materialized Views for Analytical Performance
+
+Materialized views were used to standardize and precompute reusable analytical structures.
+
+This improved downstream query performance and simplified consumption by the portal, dashboards and AI workflows.
+
+The trade-off was that refresh order became a dependency-management problem.
+
+---
+
+## 4. Refresh Analytical Objects in Dependency Order
+
+Because several materialized views depended on other views or database functions, the refresh process needed to respect dependency order.
+
+A topological sort was used to calculate the correct execution sequence and ensure downstream objects were refreshed only after upstream objects had been updated.
+
+---
+
+## 5. Keep Pricing Data Separate From Billing Data
+
+Cloud billing data and pricing reference data serve different analytical purposes.
+
+By extracting AWS pricing information separately, the platform could enrich FinOps analysis without mixing raw consumption records with external pricing metadata.
 
 ---
 
