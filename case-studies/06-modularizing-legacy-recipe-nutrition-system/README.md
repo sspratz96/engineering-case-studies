@@ -1,6 +1,6 @@
 # Modularizing a Legacy Recipe and Nutrition System
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Legacy%20Modernization-success)
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Food%20Production-orange)
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20BigQuery%20%7C%20Google%20Sheets-lightgrey)
@@ -20,6 +20,10 @@ The successful approach was different.
 Instead of trying to solve everything in a single release, the problem was decomposed into smaller modules that could be built, validated and expanded over time.
 
 The result was a Python-based system that replaced the fragile macro workflow, moved recipe calculations into a more governed environment, stored structured results in BigQuery and supported nutritional calculations through connected Google Sheets.
+
+This was not a frontend application or a full product platform.
+
+It was a modular operational system that modernized the backend logic, improved governance and gave teams a more reliable way to recalculate recipes and nutritional information without depending on fragile local Excel workflows.
 
 ---
 
@@ -283,9 +287,36 @@ The lesson was that modular delivery requires not only technical sequencing but 
 
 ---
 
+# Business Impact
+
+The project created value by reducing operational dependency on fragile local files and turning a difficult legacy workflow into a modular system that could be improved over time.
+
+It helped the organization move from a single-computer Excel macro and manually maintained nutritional files toward a governed Python, BigQuery and Google Sheets workflow.
+
+The system enabled:
+
+- faster recipe recalculation
+- execution outside one specific computer
+- selective recipe updates instead of full recalculation
+- structured recipe data in BigQuery
+- recursive ingredient decomposition
+- fewer manual copy-paste steps
+- fewer formula drag-down errors
+- one governed online nutritional table workflow
+- better access control through company accounts
+- a clearer roadmap for future requirements
+
+The most important impact was that the project became manageable.
+
+A project that had previously been seen as too large or difficult was transformed into smaller technical modules that could be delivered, validated and extended.
+
+---
+
 # Results
 
 The system improved the original workflow by replacing a fragile local macro with a more modular and governed process.
+
+It also reduced the operational risk of having recipe recalculation depend on one local computer, one local file and manual spreadsheet handling.
 
 It enabled:
 
@@ -345,6 +376,20 @@ BigQuery and recursive SQL provided a better layer for hierarchical ingredient c
 A modular roadmap can frustrate stakeholders if they expect their needs to be solved immediately.
 
 Technical sequencing must be paired with clear communication about scope and priorities.
+
+---
+
+# Final Takeaway
+
+The main lesson from this case was that some legacy problems remain unsolved not because they are technically impossible, but because they are approached with the wrong scope.
+
+Previous attempts tried to solve the entire recipe and nutrition problem at once.
+
+The successful approach was to reduce the problem into smaller modules, modernize the most fragile dependency first and then build toward a broader solution.
+
+The value was not only replacing an Excel macro with Python.
+
+The value was changing the execution strategy from one large blocked project into a sequence of smaller, solvable engineering problems.
 
 ---
 
