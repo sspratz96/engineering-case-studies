@@ -1,6 +1,6 @@
 # Production Cost Traceability
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Cost%20Traceability-success)
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Production-orange)
 ![Methods](https://img.shields.io/badge/methods-SKU%20Matching%20%7C%20SVM%20%7C%20Weighted%20Costing-lightgrey)
@@ -22,6 +22,12 @@ The company had the data required to investigate the problem, but the data could
 Internal SKUs, supplier SKUs, purchase orders, invoices, intermediate products and final products were not connected in a way that made cost traceability reliable.
 
 The solution combined supplier SKU matching, invoice-level cost reconciliation, provider-specific classification logic and a weighted cost propagation model to trace ingredient costs through the full production chain.
+
+The system also exposed a broader operational issue: purchasing, receiving and invoicing were not governed by a clean reconciliation process.
+
+By connecting purchase orders, supplier deliveries, invoice lines and internal product costs, the model became more than a costing tool.
+
+It became an operational traceability layer for purchasing, accounting and production.
 
 ---
 
@@ -274,9 +280,35 @@ By linking purchase orders, invoices, quantities and SKU-level costs, it became 
 
 ---
 
+# Business Impact
+
+The project created value beyond the original cost deviation analysis.
+
+It helped connect purchasing, accounting and production through a shared cost traceability model.
+
+The system enabled the company to:
+
+- compare contracted supplier prices against real invoiced prices
+- identify supplier-level price deviations
+- associate supplier SKUs with internal SKUs
+- trace invoice-level costs into production batches
+- estimate more realistic costs for intermediate and final products
+- explain monthly cost deviations with better evidence
+- support recipe cost optimization
+- define clearer rules for partial supplier deliveries
+- improve purchase order and invoice reconciliation
+
+The most important business impact was that cost discussions became more evidence-based.
+
+Instead of debating whether the data existed, the team could work from a model that connected the data across the production chain.
+
+---
+
 # Results
 
 The system enabled a more realistic cost database based on invoice-level information.
+
+It also made cost deviations easier to investigate because supplier prices, internal SKUs, production batches and final products could be analyzed as part of the same traceability chain.
 
 It helped the company analyze and control:
 
@@ -342,6 +374,22 @@ The system did not only calculate costs.
 It also exposed process weaknesses in supplier deliveries, invoice handling and purchase order reconciliation.
 
 This made the model useful for both analytics and operational control.
+
+---
+
+# Final Takeaway
+
+The main lesson from this case was that cost control depends on data communication.
+
+The company had purchase orders, invoices, products, suppliers and production records.
+
+But those elements did not communicate well enough to explain cost deviations.
+
+The value of the project was creating a translation and traceability layer that connected supplier behavior, invoice prices, internal SKUs and production costing.
+
+The result was not just a better model.
+
+It was a better way to understand how operational reality became financial cost.
 
 ---
 

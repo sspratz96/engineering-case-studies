@@ -28,6 +28,7 @@ The goal is to share engineering thinking behind building scalable data platform
 | 02 | [Process Capability Analysis](./case-studies/02-process-capability-analysis/) | Completed v1.0 | Statistical analysis, Python, UX |
 | 03 | [FinOps Data Platform](./case-studies/03-finops-data-platform/) | Completed v1.0 | FinOps, cloud cost analytics, data pipelines |
 | 04 | [Enterprise AI Workflows](./case-studies/04-enterprise-ai-workflows/) | Completed v1.0 | LLMs, MCP, enterprise automation |
+| 05 | [Production Cost Traceability](./case-studies/05-production-cost-traceability/) | Completed v1.0 | Cost modeling, SKU matching, production analytics |
 
 ---
 
