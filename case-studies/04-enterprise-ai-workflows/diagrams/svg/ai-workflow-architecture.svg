@@ -1,53 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520">
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="560" viewBox="0 0 1240 560">
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#4b5563" />
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563" />
     </marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.12"/>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
     </filter>
   </defs>
-  <rect width="1100" height="520" fill="#ffffff"/>
-  <text x="550" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#111827">AI Workflow Architecture</text>
-  <line x1="250" y1="206" x2="210" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
-  <line x1="400" y1="206" x2="360" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
-  <line x1="550" y1="206" x2="660" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
-  <line x1="700" y1="206" x2="660" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
-  <line x1="850" y1="206" x2="810" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
-  <line x1="1000" y1="206" x2="960" y2="206" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <rect width="1240" height="560" fill="#ffffff"/>
+  <text x="620.0" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#111827">AI Workflow Architecture</text>
+  <line x1="225" y1="229" x2="260" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="415" y1="229" x2="450" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="605" y1="229" x2="640" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="605" y1="379" x2="640" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="795" y1="229" x2="830" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="985" y1="229" x2="1020" y2="229" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
   <g filter="url(#shadow)">
-    <rect x="60" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="155.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">Bronze Layer</text>
-    <text x="155.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Raw billing data</text>
+    <rect x="70" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="147.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Bronze Layer</text>
+    <text x="147.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Raw billing data</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="210" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="305.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">Silver Layer</text>
-    <text x="305.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Standardized views</text>
+    <rect x="260" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="337.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Silver Layer</text>
+    <text x="337.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Standardized views</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="360" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="455.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">Gold Layer</text>
-    <text x="455.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Business-ready datasets</text>
+    <rect x="450" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="527.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Gold Layer</text>
+    <text x="527.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Business-ready datasets</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="510" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="605.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">Semantic Metadata</text>
-    <text x="605.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Schemas, tables, columns</text>
+    <rect x="450" y="340" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="527.5" y="370" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Semantic Metadata</text>
+    <text x="527.5" y="393" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Schemas, tables, columns</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="660" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="755.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">MCP Context Layer</text>
-    <text x="755.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Governed context exposure</text>
+    <rect x="640" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="717.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">MCP Context Layer</text>
+    <text x="717.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Governed context exposure</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="810" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="905.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">AI Assistant</text>
-    <text x="905.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">Natural-language interaction</text>
+    <rect x="830" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="907.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">AI Assistant</text>
+    <text x="907.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Natural-language interaction</text>
   </g>
   <g filter="url(#shadow)">
-    <rect x="960" y="170" width="190" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
-    <text x="1055.0" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#111827">Business User</text>
-    <text x="1055.0" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#4b5563">FinOps questions</text>
+    <rect x="1020" y="190" width="155" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1097.5" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Business User</text>
+    <text x="1097.5" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">FinOps questions</text>
   </g>
 </svg>
