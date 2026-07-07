@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="580" viewBox="0 0 1280 580">
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563" />
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="580" fill="#ffffff"/>
+  <text x="640.0" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#111827">Supplier SKU Matching Flow</text>
+  <line x1="260" y1="179" x2="340" y2="264" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="260" y1="349" x2="340" y2="264" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="510" y1="264" x2="560" y2="264" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="730" y1="264" x2="780" y2="264" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="950" y1="264" x2="1000" y2="264" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="1085" y1="303" x2="1085" y2="390" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <g filter="url(#shadow)">
+    <rect x="90" y="140" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="175.0" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Purchase Order</text>
+    <text x="175.0" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Internal SKUs</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="90" y="310" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="175.0" y="340" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Invoice</text>
+    <text x="175.0" y="363" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Supplier SKUs</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="340" y="225" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="425.0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Line Count Check</text>
+    <text x="425.0" y="278" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Same SKU quantity?</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="560" y="225" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="645.0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Similarity Optimization</text>
+    <text x="645.0" y="278" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Minimum naming error</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="780" y="225" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="865.0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Validated Matches</text>
+    <text x="865.0" y="278" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Training dataset</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1000" y="225" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1085.0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Supplier SVM</text>
+    <text x="1085.0" y="278" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Provider-specific naming</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1000" y="390" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1085.0" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">SKU Association</text>
+    <text x="1085.0" y="443" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Internal ↔ supplier SKU</text>
+  </g>
+</svg>

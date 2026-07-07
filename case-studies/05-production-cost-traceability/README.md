@@ -102,6 +102,10 @@ This was required to understand which supplier invoice line corresponded to whic
 
 The system used two matching strategies.
 
+<p align="center">
+  <img src="./diagrams/svg/sku-matching-flow.svg" alt="Supplier SKU matching flow using similarity optimization and SVM" width="950">
+</p>
+
 ### Similarity-Based Optimization
 
 When a purchase order and its related invoice had the same number of SKU lines, the system attempted to find the best internal SKU to supplier SKU mapping.
@@ -141,6 +145,10 @@ The chain followed this structure:
 ```text
 IN -> RE / PS -> PT
 ```
+
+<p align="center">
+  <img src="./diagrams/svg/weighted-cost-propagation.svg" alt="Weighted cost propagation from ingredients to final products" width="950">
+</p>
 
 Where:
 
@@ -190,6 +198,10 @@ supplier SKU and price
 internal SKU and cost
 ```
 
+<p align="center">
+  <img src="./diagrams/svg/purchase-order-invoice-control.svg" alt="Purchase order invoice and supplier delivery control" width="950">
+</p>
+
 By connecting purchase orders, invoice-level supplier SKUs, received quantities and internal products, the system made it possible to establish clearer internal rules for supplier deliveries.
 
 One important operational guideline was:
@@ -206,26 +218,9 @@ It helped establish better operating rules between purchasing, receiving, suppli
 
 # Architecture
 
-```mermaid
-flowchart TD
-    PO["Purchase Order"] --> Invoice["Supplier Invoice in Odoo"]
-    Delivery["Supplier Delivery"] --> Invoice
-
-    Invoice --> SupplierSKU["Supplier SKUs"]
-    SupplierSKU --> Matching["SKU Matching Layer"]
-
-    InternalSKU["Internal SKUs"] --> Matching
-    Matching --> RealCost["Invoice-Level Ingredient Cost"]
-
-    RealCost --> IN["IN<br/>Base Ingredients"]
-    IN --> RE["RE<br/>Intermediate kg production"]
-    IN --> PS["PS<br/>Intermediate unit production"]
-    RE --> PT["PT<br/>Final Products"]
-    PS --> PT
-
-    PT --> Traceability["Production Cost Traceability"]
-    Traceability --> Controls["Supplier and Recipe Cost Controls"]
-```
+<p align="center">
+  <img src="./diagrams/svg/cost-traceability-architecture.svg" alt="Production cost traceability architecture" width="950">
+</p>
 
 ---
 
