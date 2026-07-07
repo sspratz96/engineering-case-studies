@@ -43,6 +43,10 @@ This created a fragile workflow with high operational dependency on local files,
 
 The original process had two main subprocesses.
 
+<p align="center">
+  <img src="./diagrams/svg/legacy-workflow.svg" alt="Legacy recipe and nutrition workflow" width="950">
+</p>
+
 ## 1. Recipe Recalculation Macro
 
 A large Excel workbook contained thousands of sheets.
@@ -120,6 +124,10 @@ Instead of designing a large system from the beginning, the work was divided int
 
 This allowed progress to happen without waiting for every requirement to be solved at once.
 
+<p align="center">
+  <img src="./diagrams/svg/modular-modernization-roadmap.svg" alt="Modular modernization roadmap" width="950">
+</p>
+
 ---
 
 # Solution Overview
@@ -151,19 +159,9 @@ The process could also update specific recipes or groups of recipes instead of r
 
 # Architecture
 
-```mermaid
-flowchart TD
-    Legacy["Legacy Excel Macro"] --> Python["Python Recalculation System"]
-    Recipes["Recipe Sheets in Google Drive"] --> Python
-
-    Python --> BigQuery["BigQuery Recipe Data"]
-
-    BigQuery --> RecursiveSQL["Recursive SQL Ingredient Decomposition"]
-    RecursiveSQL --> Nutrition["Nutritional Calculations"]
-
-    Nutrition --> GSheet["Governed Google Sheet"]
-    GSheet --> Users["Production / Quality / Operations Users"]
-```
+<p align="center">
+  <img src="./diagrams/svg/recipe-recalculation-architecture.svg" alt="Recipe recalculation architecture" width="950">
+</p>
 
 ---
 
@@ -176,6 +174,10 @@ Recipes could contain ingredients, intermediate preparations or other recipe com
 This created a hierarchical structure where one product could depend on several nested recipes.
 
 Recursive SQL made it possible to decompose a recipe until reaching its base ingredients.
+
+<p align="center">
+  <img src="./diagrams/svg/recursive-nutrition-calculation.svg" alt="Recursive nutrition calculation" width="950">
+</p>
 
 This allowed the system to calculate the nutritional composition of a product from its underlying recipe structure.
 
