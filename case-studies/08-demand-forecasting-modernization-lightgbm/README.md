@@ -51,6 +51,10 @@ However, it was a critical part because demand estimates influenced downstream p
 
 The original module was not a true forecasting model.
 
+<p align="center">
+  <img src="./diagrams/svg/original-rule-based-forecasting.svg" alt="Original rule-based demand estimation" width="950">
+</p>
+
 It was a rule-based algorithm built around recent sales windows.
 
 The logic estimated expected demand using sales from the previous:
@@ -141,6 +145,10 @@ However, the model had to minimize the amount of required monitoring because the
 
 A significant part of the project was creating the right data structures.
 
+<p align="center">
+  <img src="./diagrams/svg/feature-engineering-pipeline.svg" alt="Feature engineering pipeline for demand forecasting" width="950">
+</p>
+
 The model required more than historical sales.
 
 New input tables and variables were created, including:
@@ -201,6 +209,10 @@ The improvement significantly reduced forecast error.
 # Model Evaluation
 
 Several model families were evaluated or considered.
+
+<p align="center">
+  <img src="./diagrams/svg/model-selection-tradeoff.svg" alt="Model selection trade-off for demand forecasting" width="950">
+</p>
 
 These included:
 
@@ -276,6 +288,10 @@ lower weight for farther days
 |
 combined expected demand
 ```
+
+<p align="center">
+  <img src="./diagrams/svg/lightgbm-forecasting-architecture.svg" alt="LightGBM forecasting architecture" width="950">
+</p>
 
 This helped moderate the uncertainty of forecasting several days ahead while still giving the planning process a forward-looking demand estimate.
 

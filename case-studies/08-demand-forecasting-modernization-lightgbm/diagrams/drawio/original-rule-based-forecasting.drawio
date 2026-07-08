@@ -1,0 +1,16 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Original Rule-Based Demand Estimation">
+    <mxGraphModel dx="1220" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1220" pageHeight="560" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="note" value="Original Rule-Based Demand Estimation
+
+Diagram source placeholder.
+Use the SVG as the rendered artifact." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9fafb;strokeColor=#d1d5db;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="1020" height="340" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
