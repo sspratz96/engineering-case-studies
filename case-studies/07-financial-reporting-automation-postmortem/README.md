@@ -55,6 +55,10 @@ Google Sheets
 Online governed financial reporting workflow
 ```
 
+<p align="center">
+  <img src="./diagrams/svg/target-reporting-architecture.svg" alt="Target financial reporting architecture" width="950">
+</p>
+
 The expected benefits were:
 
 - faster spreadsheet performance
@@ -70,6 +74,10 @@ The expected benefits were:
 # The Original Workflow
 
 The original monthly EERR process depended on several manual steps.
+
+<p align="center">
+  <img src="./diagrams/svg/original-reporting-workflow.svg" alt="Original monthly financial reporting workflow" width="950">
+</p>
 
 Data was extracted from the Kame ERP.
 
@@ -153,6 +161,10 @@ In many cases, solving the new issue was not enough.
 The underlying design also had to be made more robust so that similar future changes would not break the workflow.
 
 This created repeated backward redesign.
+
+<p align="center">
+  <img src="./diagrams/svg/scope-discovery-failure-loop.svg" alt="Late rule discovery and rework loop" width="950">
+</p>
 
 The project kept expanding because the boundaries of the final deliverable were not clear enough from the beginning.
 
@@ -308,6 +320,10 @@ Version 2: automated data refresh
 Version 3: rule-based adjustments
 Version 4: validation and reconciliation layer
 ```
+
+<p align="center">
+  <img src="./diagrams/svg/revised-delivery-roadmap.svg" alt="Revised delivery roadmap" width="950">
+</p>
 
 ## Establish Formal Sign-Off
 
