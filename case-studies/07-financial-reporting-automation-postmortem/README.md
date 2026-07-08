@@ -1,6 +1,6 @@
 # Financial Reporting Automation Postmortem
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Engineering%20Postmortem-success)
 ![Domain](https://img.shields.io/badge/domain-Finance%20%7C%20Reporting-orange)
 ![Stack](https://img.shields.io/badge/stack-BigQuery%20%7C%20Google%20Sheets%20%7C%20ERP-lightgrey)
@@ -21,7 +21,11 @@ Some improvements were achieved.
 
 Part of the workflow moved to Google Sheets, the spreadsheet became faster, and some data sources were integrated into BigQuery.
 
-However, the project did not become a complete financial reporting automation because the scope, rules and exceptions of the reporting process were not clearly defined from the beginning.
+However, the project did not become a complete financial reporting automation before the timeline ended.
+
+The main issue was not the technical direction.
+
+The main issue was that the scope, rules and exceptions of the reporting process were not clearly defined from the beginning.
 
 The main lesson was that financial reporting automation is not only a data pipeline problem.
 
@@ -128,6 +132,29 @@ This would reduce unauthorized access and improve version control.
 
 ---
 
+# Partial Outcome
+
+The project did not fully automate the monthly EERR process, but it still produced useful progress.
+
+The workflow moved in the right direction by reducing dependence on the original local Excel file and introducing cloud-based components for data management and collaboration.
+
+The partial outcome included:
+
+- a faster spreadsheet workflow
+- movement toward a single online version
+- Google Sheets as a collaborative interface
+- BigQuery integration for selected reporting inputs
+- better understanding of the hidden complexity behind the EERR process
+- clearer awareness that the reporting workflow needed formal rule discovery before full automation
+
+The incomplete result was valuable because it exposed the real nature of the problem.
+
+The bottleneck was not only data extraction.
+
+It was the lack of an explicit, validated and complete map of the financial reporting rules.
+
+---
+
 # What Worked
 
 The project did achieve partial improvements.
@@ -139,6 +166,10 @@ Spreadsheet performance improved compared with the original local workbook.
 Some databases and reporting inputs were integrated into BigQuery.
 
 The project also helped clarify that the existing process had more hidden logic than originally expected.
+
+That discovery was important.
+
+It showed that the project required a stronger discovery and rule-mapping phase before a full automation layer could be safely implemented.
 
 These improvements were useful, but they were not enough to complete the full automation.
 
@@ -205,6 +236,26 @@ Financial reporting workflows contain many exceptions.
 Those exceptions are often embedded in spreadsheet habits, manual adjustments and month-end routines.
 
 They are difficult to automate unless they are explicitly documented and validated.
+
+---
+
+# Business Impact
+
+Even though the project did not reach full automation, it had business value.
+
+It showed that the finance reporting process had accumulated hidden operational knowledge inside manual spreadsheet routines.
+
+The project helped reveal that:
+
+- the EERR workflow was more complex than it looked from the outside
+- several financial rules were informal or undocumented
+- manual month-end adjustments needed to be mapped before automation
+- cloud tools could improve collaboration, but not replace unclear process ownership
+- a reliable financial reporting automation required formal rule validation
+
+The business lesson was that automation should not only optimize the visible workflow.
+
+It should also make the invisible rules explicit.
 
 ---
 
@@ -350,3 +401,7 @@ The most important lesson was:
 For financial reporting, the hardest part is often not extracting the data.
 
 It is discovering the rules that people apply manually, informally and repeatedly during the month-end process.
+
+This case changed the way I think about automation.
+
+Before automating a complex business process, the first deliverable should be understanding the process well enough to define its rules, exceptions, owners and validation criteria.
