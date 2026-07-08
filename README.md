@@ -17,6 +17,10 @@ The goal is to share engineering thinking behind building scalable data platform
 - Business Process Automation
 - Machine Learning
 - AI-enabled Systems
+- FinOps
+- Forecasting
+- Operational Analytics
+- Financial Reporting
 
 ---
 
