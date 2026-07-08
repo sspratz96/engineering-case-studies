@@ -31,7 +31,7 @@ The goal is to share engineering thinking behind building scalable data platform
 | 05 | [Production Cost Traceability](./case-studies/05-production-cost-traceability/) | Completed v1.0 | Cost modeling, SKU matching, production analytics |
 | 06 | [Modularizing a Legacy Recipe and Nutrition System](./case-studies/06-modularizing-legacy-recipe-nutrition-system/) | In Progress | Python automation, BigQuery, recipe data modeling |
 | 07 | [Financial Reporting Automation Postmortem](./case-studies/07-financial-reporting-automation-postmortem/) | Completed v1.0 | Financial reporting, automation, scope management |
-| 08 | [Demand Forecasting Modernization with LightGBM](./case-studies/08-demand-forecasting-modernization-lightgbm/) | In Progress | Forecasting, LightGBM, feature engineering |
+| 08 | [Demand Forecasting Modernization with LightGBM](./case-studies/08-demand-forecasting-modernization-lightgbm/) | Completed v1.0 | Forecasting, LightGBM, feature engineering |
 
 ---
 

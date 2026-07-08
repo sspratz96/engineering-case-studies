@@ -1,6 +1,6 @@
 # Demand Forecasting Modernization with LightGBM
 
-![Status](https://img.shields.io/badge/status-In%20Progress-blue)
+![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Demand%20Forecasting-success)
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Production%20Planning-orange)
 ![Methods](https://img.shields.io/badge/methods-LightGBM%20%7C%20Feature%20Engineering%20%7C%20Bagging-lightgrey)
@@ -24,6 +24,10 @@ It also ran slowly because it iterated product by product and store by store acr
 The goal was to replace this static and slow logic with a model that could learn from historical demand patterns while still being fast enough to run at store-SKU granularity.
 
 After evaluating several forecasting approaches, LightGBM was selected because it offered the best balance between speed, granularity, predictive performance, low monitoring overhead and understandable tuning.
+
+The project also showed that a better forecasting model is not enough by itself.
+
+A model only creates operational impact when the organization trusts it, monitors it and is willing to change the planning process around it.
 
 ---
 
@@ -333,6 +337,38 @@ The project showed that a model only creates impact when people are willing to t
 
 ---
 
+# Adoption and Change Management
+
+The most difficult part of the project was not selecting the model.
+
+It was changing the planning mindset.
+
+The previous algorithm was known to have limitations, but it was familiar.
+
+The new model produced better measurable results, but it required people to trust a different way of estimating demand.
+
+This created a gap between technical performance and operational adoption.
+
+A forecasting system does not only need accuracy.
+
+It needs:
+
+- trust from the people using it
+- clear ownership
+- ongoing monitoring
+- explainable results
+- a pilot strategy
+- agreement on when to override the model
+- a process for learning from forecast errors
+
+This was one of the main lessons of the project.
+
+A model is only part of the planning system.
+
+The people and process around it determine whether the model creates real impact.
+
+---
+
 # Key Engineering Decisions
 
 ## 1. Treat the Original Forecast as a Rule-Based Algorithm
@@ -379,9 +415,35 @@ This reflected the practical uncertainty of planning several days ahead.
 
 ---
 
+# Business Impact
+
+The project created value by proving that the existing demand estimation logic could be improved both analytically and computationally.
+
+The original process was familiar, but it was slow and based on fixed assumptions.
+
+The LightGBM approach showed that the planning workflow could use historical demand, operational context and engineered temporal features to produce better store-SKU-level estimates.
+
+The project enabled:
+
+- faster demand estimation logic
+- store-SKU-level forecasting
+- replacement of fixed rules with learned patterns
+- comparison against the previous algorithm using quantitative metrics
+- use of weather, calendar and operational variables
+- better representation of temporal demand behavior
+- a clearer technical path for modernizing production planning
+
+The largest business challenge was adoption.
+
+The model could outperform the previous algorithm, but the organization still needed to trust the new process before it could become the default planning method.
+
+---
+
 # Results
 
 The project demonstrated that the original demand estimation module could be improved with a machine learning approach.
+
+It also demonstrated that the previous algorithm was not only technically slow, but conceptually limited because it did not learn from historical demand behavior.
 
 It enabled:
 
@@ -482,3 +544,7 @@ But the broader lesson was human.
 A better model does not replace the need for trust, monitoring and organizational willingness to change.
 
 The real success of a forecasting system depends not only on prediction quality, but on whether people are willing to use it to make decisions.
+
+This project taught me not to fall in love with the solution itself.
+
+Even when a model is faster, more flexible and quantitatively better, the final impact depends on adoption, trust and operational ownership.
