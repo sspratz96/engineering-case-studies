@@ -192,33 +192,11 @@ The CRM was intentionally lightweight and aligned with the scale of the business
 
 The architecture prioritised simplicity, low operational cost and tools familiar to the founders.
 
-```text
-Firebase Hosting
-│
-├── Public brand website
-├── Product and ecommerce experience
-├── Taller de Bichos landing pages
-├── Administrative interface
-└── CRM interface
-         │
-         ▼
-Google Apps Script
-│
-├── Public content endpoints
-├── Reservation operations
-├── Authentication validation
-├── Email automation
-├── CRM operations
-└── Business rules
-         │
-         ▼
-Google Sheets
-├── Products and public content
-├── Workshops and schedules
-├── Reservations
-├── Audit records
-└── CRM data
-```
+<p align="center">
+  <img src="./diagrams/svg/platform-architecture.svg"
+       alt="Digital platform architecture for Bichos Club and Taller de Bichos"
+       width="950">
+</p>
 
 This architecture avoided introducing a traditional application server or a managed relational database before the business needed them.
 

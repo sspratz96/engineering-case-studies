@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="760" viewBox="0 0 1240 760">
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1240" height="760" fill="#ffffff"/>
+  <text x="620" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="28" font-weight="700" fill="#111827">Digital Platform Architecture</text>
+  <text x="620" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="13" fill="#6b7280">Low-cost architecture for public experiences, internal operations and governed data access</text>
+
+  <!-- Users -->
+  <text x="90" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">USERS</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="145" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="155" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Public Visitors</text>
+    <text x="155" y="199" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Families, schools, customers</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="275" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="155" y="306" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Founders</text>
+    <text x="155" y="329" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Content and operations</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="405" width="170" height="78" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="155" y="436" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Internal Team</text>
+    <text x="155" y="459" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">CRM and administration</text>
+  </g>
+
+  <!-- Frontend -->
+  <text x="325" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">FIREBASE HOSTING</text>
+
+  <g filter="url(#shadow)">
+    <rect x="305" y="145" width="230" height="92" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="420" y="175" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Public Experience</text>
+    <text x="420" y="199" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Bichos Club · Products</text>
+    <text x="420" y="217" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Taller de Bichos · B2B</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="305" y="275" width="230" height="92" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="420" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Admin Interface</text>
+    <text x="420" y="329" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Workshops · Products · Content</text>
+    <text x="420" y="347" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Bookings · Gallery</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="305" y="405" width="230" height="92" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="420" y="435" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">CRM Interface</text>
+    <text x="420" y="459" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Contacts · Opportunities</text>
+    <text x="420" y="477" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Actions · Internal notes</text>
+  </g>
+
+  <!-- Backend -->
+  <text x="615" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">GOOGLE APPS SCRIPT</text>
+
+  <g filter="url(#shadow)">
+    <rect x="595" y="145" width="270" height="352" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="730" y="181" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Application and Business Logic</text>
+
+    <rect x="625" y="208" width="210" height="42" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="730" y="234" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Public content endpoints</text>
+
+    <rect x="625" y="265" width="210" height="42" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="730" y="291" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Reservation and capacity rules</text>
+
+    <rect x="625" y="322" width="210" height="42" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="730" y="348" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Authentication validation</text>
+
+    <rect x="625" y="379" width="210" height="42" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="730" y="405" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">CRM and administrative operations</text>
+
+    <rect x="625" y="436" width="210" height="42" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="730" y="462" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Email and audit automation</text>
+  </g>
+
+  <!-- Data -->
+  <text x="945" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">GOOGLE WORKSPACE</text>
+
+  <g filter="url(#shadow)">
+    <rect x="925" y="145" width="245" height="245" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1047.5" y="179" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Google Sheets</text>
+
+    <text x="955" y="218" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">• Products and public content</text>
+    <text x="955" y="250" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">• Workshops and schedules</text>
+    <text x="955" y="282" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">• Reservations and capacity</text>
+    <text x="955" y="314" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">• Audit records</text>
+    <text x="955" y="346" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">• CRM data</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="925" y="425" width="245" height="72" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1047.5" y="454" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Gmail</text>
+    <text x="1047.5" y="477" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Confirmations and notifications</text>
+  </g>
+
+  <!-- Access boundary -->
+  <rect x="285" y="255" width="600" height="262" rx="20" fill="none" stroke="#9ca3af" stroke-dasharray="8 7" stroke-width="1.5"/>
+  <text x="585" y="535" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">AUTHENTICATED INTERNAL WORKFLOWS</text>
+
+  <!-- Connections -->
+  <line x1="240" y1="184" x2="305" y2="184" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="240" y1="314" x2="305" y2="314" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="240" y1="444" x2="305" y2="444" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <line x1="535" y1="191" x2="595" y2="191" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="535" y1="321" x2="595" y2="321" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="535" y1="451" x2="595" y2="451" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <line x1="865" y1="267" x2="925" y2="267" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="865" y1="457" x2="925" y2="457" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <!-- Delivery -->
+  <text x="325" y="612" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">DELIVERY AND EVOLUTION</text>
+
+  <g filter="url(#shadow)">
+    <rect x="305" y="635" width="230" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="420" y="665" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">GitHub Actions</text>
+    <text x="420" y="688" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Validation and Firebase deployment</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="595" y="635" width="270" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="730" y="665" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Private Development Repository</text>
+    <text x="730" y="688" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Access limited to the three-person team</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="925" y="635" width="245" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1047.5" y="665" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Future Shopify Integration</text>
+    <text x="1047.5" y="688" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Production commerce capabilities</text>
+  </g>
+
+  <line x1="595" y1="673" x2="535" y2="673" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="865" y1="673" x2="925" y2="673" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+</svg>
