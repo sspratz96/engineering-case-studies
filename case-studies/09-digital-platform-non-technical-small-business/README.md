@@ -1,6 +1,6 @@
 # Digital Platform for a Non-Technical Small Business
 
-![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
+![Status](https://img.shields.io/badge/status-Internal%20Development-yellow)
 ![Focus](https://img.shields.io/badge/focus-Product%20Engineering-success)
 ![Architecture](https://img.shields.io/badge/architecture-Serverless%20%7C%20Low--Cost-orange)
 ![Stack](https://img.shields.io/badge/stack-Firebase%20%7C%20Apps%20Script%20%7C%20Google%20Sheets-lightgrey)
@@ -46,7 +46,7 @@ At the same time, Taller de Bichos had a related but distinct purpose. It needed
 
 The challenge was to allow both initiatives to coexist within one digital ecosystem while preserving their different user journeys.
 
-The platform also needed to remain practical for a small team:
+The platform also needed to remain practical for a small team during internal development and after launch:
 
 - low initial cost
 - minimal infrastructure maintenance
@@ -54,6 +54,18 @@ The platform also needed to remain practical for a small team:
 - simple operational workflows
 - protection of personal and commercial information
 - a clear path toward future ecommerce growth
+
+---
+
+# Current Project Status
+
+At the time of writing, the platform remains under internal development and has not yet been launched publicly.
+
+The source code is maintained in a private repository, with access currently limited to the two founders and myself. This controlled environment allows us to validate the product experience, administrative workflows, reservation logic, data access boundaries and deployment configuration before making the platform available to external users.
+
+A first public launch is tentatively planned for **November 2026**.
+
+The capabilities and outcomes described in this case study therefore refer to the current internal implementation and its validated workflows. They should not be interpreted as evidence of active public usage, customer adoption or production-scale performance.
 
 ---
 
@@ -439,23 +451,25 @@ As sales volume and collaboration requirements grow, a dedicated CRM may provide
 
 # Results
 
-The project converted an informal business vision into an integrated and operable digital platform.
+The project has converted an informal business vision into an integrated internal platform that is currently being reviewed and refined ahead of its planned public launch.
 
-The main outcomes were:
+The internal version currently supports:
 
-- Bichos Club and Taller de Bichos could coexist within one digital ecosystem
-- workshop reservations followed structured business rules
-- capacity changes were handled consistently
-- founders could manage selected content without editing code
-- private operational data was separated from public content
-- commercial follow-up could be managed through a lightweight CRM
-- email and deployment tasks were automated
-- development and public access modes were clearly separated
-- the business gained a practical path toward future Shopify adoption
+- the coexistence of Bichos Club and Taller de Bichos within one digital ecosystem
+- structured workshop reservation workflows
+- consistent capacity and booking-state management
+- content administration without routine source-code changes
+- separation between public content and private operational data
+- lightweight commercial follow-up through a custom CRM
+- automated email and deployment processes
+- separate development and public-access configurations
+- a practical future path toward Shopify adoption
 
-The platform also gave the founders something concrete to review and refine.
+The platform has also given the founders a concrete environment in which to review the product and refine their requirements.
 
-Instead of discussing only abstract ideas, they could interact with workflows, identify missing requirements and make better product decisions.
+Instead of discussing only abstract ideas, the three-person team can interact with the workflows, identify missing requirements and make better product decisions before the public release.
+
+Because the platform is not yet publicly available, this case study does not claim active customer adoption, production usage metrics or commercial results.
 
 ---
 
