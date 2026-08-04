@@ -317,6 +317,12 @@ The backend also applied controls such as:
 - revision checks
 - explicit public-field selection
 
+<p align="center">
+  <img src="./diagrams/svg/administrative-operations-flow.svg"
+       alt="Authenticated administrative workflow with backend validation, revision control and audit logging"
+       width="950">
+</p>
+
 These controls reduced the risk of accidental corruption, unauthorised data exposure and formula injection.
 
 ---

@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="940" viewBox="0 0 1240 940">
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1240" height="940" fill="#ffffff"/>
+
+  <text x="620" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="28" font-weight="700" fill="#111827">Administrative and Operations Flow</text>
+  <text x="620" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="13" fill="#6b7280">Authenticated content and booking management with backend validation and auditability</text>
+
+  <!-- Swimlane labels -->
+  <text x="90" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">AUTHORISED USER</text>
+  <text x="390" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">ADMIN INTERFACE</text>
+  <text x="710" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">APPS SCRIPT BACKEND</text>
+  <text x="1010" y="122" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">GOOGLE SHEETS</text>
+
+  <!-- Vertical separators -->
+  <line x1="300" y1="135" x2="300" y2="865" stroke="#e5e7eb" stroke-width="1.5"/>
+  <line x1="620" y1="135" x2="620" y2="865" stroke="#e5e7eb" stroke-width="1.5"/>
+  <line x1="930" y1="135" x2="930" y2="865" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Step 1 -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="160" width="200" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="170" y="189" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Sign In</text>
+    <text x="170" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Access internal tools</text>
+  </g>
+
+  <line x1="270" y1="198" x2="350" y2="198" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="160" width="230" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="465" y="189" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Obtain Auth Token</text>
+    <text x="465" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Prepare protected request</text>
+  </g>
+
+  <line x1="580" y1="198" x2="670" y2="198" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <polygon points="790,150 900,198 790,246 680,198" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="790" y="192" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Token Valid?</text>
+    <text x="790" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Identity and access check</text>
+  </g>
+
+  <!-- Invalid auth branch -->
+  <line x1="790" y1="246" x2="790" y2="286" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="812" y="272" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">NO</text>
+
+  <g filter="url(#shadow)">
+    <rect x="690" y="290" width="200" height="70" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="790" y="318" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Reject Access</text>
+    <text x="790" y="341" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Return authorised error</text>
+  </g>
+
+  <!-- Valid path -->
+  <line x1="900" y1="198" x2="990" y2="198" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="945" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">YES</text>
+
+  <g filter="url(#shadow)">
+    <rect x="970" y="160" width="200" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1070" y="189" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Read Allowed Data</text>
+    <text x="1070" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Only approved sheets and fields</text>
+  </g>
+
+  <!-- Load data back -->
+  <line x1="970" y1="236" x2="580" y2="325" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="300" width="230" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="465" y="329" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Display Current State</text>
+    <text x="465" y="352" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Content, bookings or CRM records</text>
+  </g>
+
+  <line x1="350" y1="338" x2="270" y2="338" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="300" width="200" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="170" y="329" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Review and Edit</text>
+    <text x="170" y="352" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Update selected record</text>
+  </g>
+
+  <!-- Save path -->
+  <line x1="170" y1="376" x2="170" y2="430" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="435" width="200" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="170" y="464" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Submit Change</text>
+    <text x="170" y="487" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Include record revision</text>
+  </g>
+
+  <line x1="270" y1="473" x2="350" y2="473" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="435" width="230" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="465" y="464" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Send Protected Request</text>
+    <text x="465" y="487" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Token, action, payload and revision</text>
+  </g>
+
+  <line x1="580" y1="473" x2="680" y2="473" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="680" y="425" width="220" height="96" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="790" y="454" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Validate Operation</text>
+    <text x="790" y="477" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Token · field allowlist · types</text>
+    <text x="790" y="495" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">status rules · formula neutralisation</text>
+  </g>
+
+  <line x1="790" y1="521" x2="790" y2="560" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <polygon points="790,565 900,615 790,665 680,615" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="790" y="608" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Revision Current?</text>
+    <text x="790" y="630" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Prevent stale overwrite</text>
+  </g>
+
+  <!-- Conflict -->
+  <line x1="680" y1="615" x2="580" y2="615" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="630" y="599" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">NO</text>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="577" width="230" height="76" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="465" y="606" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Return Conflict</text>
+    <text x="465" y="629" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Reload latest record before retry</text>
+  </g>
+
+  <!-- Approved write -->
+  <line x1="900" y1="615" x2="970" y2="615" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="935" y="599" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">YES</text>
+
+  <g filter="url(#shadow)">
+    <rect x="970" y="565" width="200" height="100" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1070" y="594" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Write Updated Record</text>
+    <text x="1070" y="617" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Apply approved state change</text>
+    <text x="1070" y="637" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Preserve history when required</text>
+  </g>
+
+  <line x1="1070" y1="665" x2="1070" y2="710" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="970" y="715" width="200" height="86" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1070" y="744" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Append Audit Event</text>
+    <text x="1070" y="767" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Actor, timestamp, action and reason</text>
+    <text x="1070" y="785" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Update revision identifier</text>
+  </g>
+
+  <!-- Success response -->
+  <line x1="970" y1="758" x2="900" y2="758" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="680" y="715" width="220" height="86" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="790" y="744" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Return Updated State</text>
+    <text x="790" y="767" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Success result and new revision</text>
+    <text x="790" y="785" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Optional email automation</text>
+  </g>
+
+  <line x1="680" y1="758" x2="580" y2="758" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="715" width="230" height="86" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="465" y="744" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Refresh Interface</text>
+    <text x="465" y="767" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Show saved state and feedback</text>
+    <text x="465" y="785" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Keep user on current workflow</text>
+  </g>
+
+  <line x1="350" y1="758" x2="270" y2="758" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="715" width="200" height="86" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="170" y="744" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Continue Operations</text>
+    <text x="170" y="767" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Review, edit or manage</text>
+    <text x="170" y="785" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">another record</text>
+  </g>
+
+  <!-- Bottom callout -->
+  <rect x="250" y="845" width="740" height="56" rx="12" fill="none" stroke="#9ca3af" stroke-dasharray="8 7" stroke-width="1.5"/>
+  <text x="620" y="868" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#374151">Security boundary remains in the backend</text>
+  <text x="620" y="888" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#6b7280">The interface can request an operation, but Apps Script decides whether the user, fields and state transition are allowed.</text>
+</svg>
