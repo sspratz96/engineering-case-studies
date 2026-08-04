@@ -234,21 +234,11 @@ It was a proportional first system that could support early operations while pre
 
 The reservation process connected the public experience with operational rules and persistent records.
 
-```text
-Visitor selects a workshop
-        ↓
-Workshop availability is retrieved
-        ↓
-Request fields are validated
-        ↓
-Duplicate conditions are checked
-        ↓
-Capacity is updated under a lock
-        ↓
-Reservation record is stored
-        ↓
-Confirmation communication is triggered
-```
+<p align="center">
+  <img src="./diagrams/svg/workshop-reservation-flow.svg"
+       alt="Workshop reservation validation, capacity control and confirmation flow"
+       width="950">
+</p>
 
 The workflow needed to protect capacity consistency.
 
