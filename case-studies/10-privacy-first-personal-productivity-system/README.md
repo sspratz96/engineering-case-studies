@@ -345,6 +345,12 @@ The design provides:
 
 # Synchronisation Conflict Handling
 
+<p align="center">
+  <img src="./diagrams/svg/backup-synchronisation-flow.svg"
+       alt="Backup, optional Google Drive synchronisation and conflict-resolution flow"
+       width="950">
+</p>
+
 Synchronisation becomes difficult when local and remote copies both change.
 
 The application avoids silently deciding which version survives.

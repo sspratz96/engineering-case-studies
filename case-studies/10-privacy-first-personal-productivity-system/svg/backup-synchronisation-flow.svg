@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="920" viewBox="0 0 1240 920">
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1240" height="920" fill="#ffffff"/>
+
+  <text x="620" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="28" font-weight="700" fill="#111827">Backup and Synchronisation Flow</text>
+  <text x="620" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="13" fill="#6b7280">Manual recovery, optional Google Drive synchronisation and explicit conflict resolution</text>
+
+  <!-- Main local state -->
+  <text x="95" y="125" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">LOCAL WORKING COPY</text>
+  <g filter="url(#shadow)">
+    <rect x="70" y="150" width="230" height="188" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="185" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Browser Data</text>
+
+    <rect x="95" y="205" width="180" height="52" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="185" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111827">localStorage</text>
+    <text x="185" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Structured application state</text>
+
+    <rect x="95" y="273" width="180" height="52" rx="9" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="185" y="296" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111827">IndexedDB</text>
+    <text x="185" y="314" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Photographs and images</text>
+  </g>
+
+  <!-- Manual JSON backup -->
+  <text x="405" y="125" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">MANUAL BACKUP</text>
+  <g filter="url(#shadow)">
+    <rect x="360" y="150" width="230" height="188" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="475" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">JSON Backup File</text>
+    <text x="475" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Complete portable snapshot</text>
+
+    <rect x="390" y="235" width="170" height="34" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="475" y="257" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Agenda · Routine · Tasks</text>
+
+    <rect x="390" y="279" width="170" height="34" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="475" y="301" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Memories · Journal · Photos</text>
+  </g>
+
+  <!-- Optional Drive -->
+  <text x="720" y="125" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">OPTIONAL CLOUD COPY</text>
+  <g filter="url(#shadow)">
+    <rect x="650" y="150" width="250" height="188" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="775" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Google Drive</text>
+    <text x="775" y="206" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">User-owned synchronisation files</text>
+
+    <rect x="680" y="230" width="190" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="775" y="254" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">mi-calendario-datos.json</text>
+
+    <rect x="680" y="280" width="190" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="775" y="304" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">mi-calendario-datos-anterior.json</text>
+  </g>
+
+  <!-- Compare -->
+  <text x="1010" y="125" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">SYNC DECISION</text>
+  <g filter="url(#shadow)">
+    <polygon points="1065,150 1180,244 1065,338 950,244" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1065" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Both Copies</text>
+    <text x="1065" y="248" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Changed?</text>
+    <text x="1065" y="272" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Compare known Drive state</text>
+    <text x="1065" y="290" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">with current local changes</text>
+  </g>
+
+  <!-- Main arrows -->
+  <line x1="300" y1="244" x2="360" y2="244" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="330" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">EXPORT</text>
+
+  <line x1="590" y1="244" x2="650" y2="244" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="620" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">OPTIONAL SYNC</text>
+
+  <line x1="900" y1="244" x2="950" y2="244" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <!-- Restore arrow -->
+  <path d="M475 338 L475 392 L185 392 L185 338" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+  <text x="330" y="382" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">MANUAL RESTORE</text>
+
+  <!-- Outcomes -->
+  <text x="95" y="470" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">AUTOMATIC CASES</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="495" width="245" height="118" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="192.5" y="525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Drive Empty</text>
+    <text x="192.5" y="549" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Upload local data</text>
+    <text x="192.5" y="571" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">without asking for a conflict choice</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="495" width="245" height="118" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="472.5" y="525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Local Copy Empty</text>
+    <text x="472.5" y="549" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Download Drive data</text>
+    <text x="472.5" y="571" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">to initialise the current device</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="630" y="495" width="245" height="118" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="752.5" y="525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Drive Unchanged</text>
+    <text x="752.5" y="549" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Upload local changes safely</text>
+    <text x="752.5" y="571" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">and retain previous Drive content</text>
+  </g>
+
+  <!-- Conflict branch -->
+  <text x="970" y="470" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">EXPLICIT CONFLICT</text>
+
+  <g filter="url(#shadow)">
+    <rect x="930" y="495" width="250" height="225" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1055" y="526" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">User Chooses</text>
+
+    <rect x="960" y="550" width="190" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="1055" y="574" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Keep Local Version</text>
+
+    <rect x="960" y="600" width="190" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="1055" y="624" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Keep Drive Version</text>
+
+    <rect x="960" y="650" width="190" height="48" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="1055" y="670" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Combine Both</text>
+    <text x="1055" y="688" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#6b7280">newer entity version wins</text>
+  </g>
+
+  <!-- compare arrow down -->
+  <line x1="1065" y1="338" x2="1065" y2="495" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="1088" y="420" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="#6b7280">YES</text>
+
+  <!-- Safety net -->
+  <rect x="70" y="760" width="1110" height="112" rx="14" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="8 7"/>
+  <text x="625" y="790" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="700" fill="#374151">Recovery and Data-Ownership Principles</text>
+  <text x="105" y="819" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• The browser remains the daily working copy.</text>
+  <text x="105" y="844" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• Drive synchronisation is optional and uses the limited `drive.file` permission.</text>
+  <text x="625" y="819" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• The previous Drive file is preserved before replacement.</text>
+  <text x="625" y="844" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• Merge does not reliably propagate deletions; avoiding permanent data loss is prioritised.</text>
+</svg>
