@@ -252,28 +252,11 @@ If the event is deleted, the memory remains because the historical record should
 
 The application uses a deliberately simple browser-based architecture.
 
-```text
-GitHub Pages
-      │
-      ▼
-Static Web Application
-HTML · CSS · JavaScript
-      │
-      ├── localStorage
-      │     Structured application data
-      │
-      ├── IndexedDB
-      │     Photographs and images
-      │
-      ├── Embedded geographic data
-      │     Offline world globe
-      │
-      ├── JSON import/export
-      │     Manual backup and restore
-      │
-      └── Google Drive API
-            Optional cross-device synchronisation
-```
+<p align="center">
+  <img src="./diagrams/svg/local-first-architecture.svg"
+       alt="Local-first architecture for Mi Almanaque"
+       width="950">
+</p>
 
 There is no custom backend and no managed application database.
 

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="860" viewBox="0 0 1240 860">
+  <defs>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#4b5563"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <rect width="1240" height="860" fill="#ffffff"/>
+
+  <text x="620" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="28" font-weight="700" fill="#111827">Local-First Architecture</text>
+  <text x="620" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-size="13" fill="#6b7280">Privacy-first personal productivity system with browser-native storage and optional Drive synchronisation</text>
+
+  <!-- User -->
+  <text x="92" y="120" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">USER AND DEVICES</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="150" width="205" height="82" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="172.5" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Browser User</text>
+    <text x="172.5" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Desktop or mobile browser</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="290" width="205" height="82" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="172.5" y="320" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Offline Use</text>
+    <text x="172.5" y="344" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Core workflows work locally</text>
+  </g>
+
+  <!-- Hosting -->
+  <text x="390" y="120" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">STATIC DELIVERY</text>
+
+  <g filter="url(#shadow)">
+    <rect x="350" y="150" width="245" height="82" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="472.5" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">GitHub Pages</text>
+    <text x="472.5" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Static hosting for application files</text>
+  </g>
+
+  <!-- App -->
+  <text x="710" y="120" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">APPLICATION LAYER</text>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="150" width="305" height="242" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="802.5" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Static Web Application</text>
+    <text x="802.5" y="206" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">HTML · CSS · JavaScript</text>
+
+    <rect x="682" y="228" width="240" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Agenda · Routine · Pending</text>
+
+    <rect x="682" y="281" width="240" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Memories · Journal</text>
+
+    <rect x="682" y="334" width="240" height="38" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="358" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Import / Export / Sync UI</text>
+  </g>
+
+  <!-- Storage -->
+  <text x="710" y="455" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">LOCAL STORAGE</text>
+
+  <g filter="url(#shadow)">
+    <rect x="650" y="485" width="305" height="290" rx="14" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="802.5" y="517" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#111827">Browser-Native Data Layer</text>
+
+    <rect x="682" y="540" width="240" height="74" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="567" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111827">localStorage</text>
+    <text x="802.5" y="589" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Structured state:</text>
+    <text x="802.5" y="607" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">events, habits, tasks, journal, metadata</text>
+
+    <rect x="682" y="632" width="240" height="74" rx="10" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="659" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#111827">IndexedDB</text>
+    <text x="802.5" y="681" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Photographs and image assets</text>
+    <text x="802.5" y="699" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Reduced before storage</text>
+
+    <rect x="682" y="724" width="240" height="34" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="802.5" y="746" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" fill="#374151">Embedded globe / geographic data</text>
+  </g>
+
+  <!-- Backup and sync -->
+  <text x="1030" y="120" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#6b7280">PORTABILITY AND SYNC</text>
+
+  <g filter="url(#shadow)">
+    <rect x="1000" y="150" width="180" height="82" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1090" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">JSON Backup</text>
+    <text x="1090" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Download and restore full data</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1000" y="290" width="180" height="82" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1090" y="320" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">CSV Import</text>
+    <text x="1090" y="344" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Add calendar events to Agenda</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1000" y="430" width="180" height="110" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1090" y="460" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Google Drive API</text>
+    <text x="1090" y="484" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Optional sync only</text>
+    <text x="1090" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">`drive.file` permission</text>
+    <text x="1090" y="520" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">User-owned JSON file</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1000" y="585" width="180" height="112" rx="12" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.5"/>
+    <text x="1090" y="614" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#111827">Conflict Resolution</text>
+    <text x="1090" y="638" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Keep local</text>
+    <text x="1090" y="656" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Keep Drive</text>
+    <text x="1090" y="674" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" fill="#4b5563">Combine both</text>
+  </g>
+
+  <!-- arrows -->
+  <line x1="275" y1="191" x2="350" y2="191" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="595" y1="191" x2="650" y2="191" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <line x1="172.5" y1="232" x2="172.5" y2="290" stroke="#9ca3af" stroke-width="1.8" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+
+  <line x1="802.5" y1="392" x2="802.5" y2="485" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <line x1="955" y1="575" x2="1000" y2="485" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="955" y1="575" x2="1000" y2="641" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <line x1="955" y1="191" x2="1000" y2="191" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="955" y1="305" x2="1000" y2="331" stroke="#4b5563" stroke-width="2.2" marker-end="url(#arrow)"/>
+
+  <!-- legend / notes -->
+  <rect x="70" y="690" width="525" height="115" rx="14" fill="none" stroke="#9ca3af" stroke-dasharray="8 7" stroke-width="1.5"/>
+  <text x="332.5" y="720" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#374151">Design Intent</text>
+  <text x="100" y="748" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• Personal data stays in the browser by default.</text>
+  <text x="100" y="770" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• Synchronisation improves convenience but is not required for normal use.</text>
+  <text x="100" y="792" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4b5563">• JSON export provides an independent recovery path outside the app.</text>
+</svg>
