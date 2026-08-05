@@ -221,6 +221,12 @@ The value of the product comes not only from these modules individually, but fro
 
 # Connecting Plans to Memories
 
+<p align="center">
+  <img src="./diagrams/svg/agenda-to-memory-lifecycle.svg"
+       alt="Lifecycle for converting an Agenda event into a linked personal memory"
+       width="950">
+</p>
+
 One of the most useful workflows connects Agenda and Memories.
 
 Without this connection, an activity had to be entered twice:
