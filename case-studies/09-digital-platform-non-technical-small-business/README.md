@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-Serverless%20%7C%20Low--Cost-orange)
 ![Stack](https://img.shields.io/badge/stack-Firebase%20%7C%20Apps%20Script%20%7C%20Google%20Sheets-lightgrey)
 
+**Context:** independent project for a small business · Chile · 2026 – present
+
 ## Executive Summary
 
 This case study documents the design and implementation of a lightweight digital platform for a small business led by non-technical founders.

@@ -39,7 +39,7 @@ It is a business-rule discovery problem.
 
 The request came from the finance and production management area.
 
-The company prepared monthly financial statement reports using a workflow that combined ERP information from Kame with a local Excel file.
+The company prepared monthly financial statement reports using a workflow that combined information from the company's ERP with a local Excel file.
 
 The Excel file accumulated historical data and monthly inputs.
 
@@ -52,7 +52,7 @@ The intention was to modernize the workflow by using cloud-based tools that had 
 The target direction was:
 
 ```text
-Kame ERP
+ERP
 |
 BigQuery
 |
@@ -85,7 +85,7 @@ The original monthly EERR process depended on several manual steps.
   <img src="./diagrams/svg/original-reporting-workflow.svg" alt="Original monthly financial reporting workflow" width="950">
 </p>
 
-Data was extracted from the Kame ERP.
+Data was extracted from the ERP.
 
 That information was then copied into a local Excel workbook.
 
