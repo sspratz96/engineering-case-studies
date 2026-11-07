@@ -1,9 +1,9 @@
 # Building a Privacy-First Personal Productivity System
 
-![Status](https://img.shields.io/badge/status-Completed%20v1.0-brightgreen)
+![Status](https://img.shields.io/badge/status-In%20Production-brightgreen)
 ![Focus](https://img.shields.io/badge/focus-Product%20Engineering-success)
 ![Architecture](https://img.shields.io/badge/architecture-Local--First%20%7C%20Zero--Backend-orange)
-![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20JavaScript%20%7C%20IndexedDB%20%7C%20Google%20Drive-lightgrey)
+![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20JavaScript%20%7C%20IndexedDB%20%7C%20PWA%20%7C%20Google%20Drive-lightgrey)
 
 ## Executive Summary
 
@@ -24,12 +24,14 @@ The resulting system integrates:
 - habit tracking
 - personal metrics and charts
 - journal entries
+- expense tracking with monthly budgets
+- linked notes with a network view, compatible with Obsidian
 - memories with photographs
-- geographic visualisation of memories
+- geographic visualisation of memories, with KML and GPX import and export
 - manual JSON backup and restore
 - CSV event import
 - optional Google Drive synchronisation
-- responsive and offline-capable use
+- installable, offline-capable use as a progressive web app
 - static deployment through GitHub Pages
 
 The functional 80/20 of the product was implemented in less than a day with the support of AI coding agents.
@@ -44,6 +46,10 @@ The speed came from combining:
 - prior knowledge of browser storage, APIs and static hosting
 - concise and testable instructions for AI coding agents
 - immediate validation against a real workflow
+
+The first version was built in July 2026. Over the following months, real daily use led to two new sections, Wallet and Notes, and to turning the application into an installable progressive web app.
+
+In October 2026 I audited the application as if I had inherited it, and fixed the findings one by one in order of severity. The most important one was a critical data-loss path in the Drive synchronisation, described in [Hardening Through a Structured Audit](#hardening-through-a-structured-audit).
 
 The project demonstrates how clear problem framing and proportional architecture can turn AI-assisted implementation into a useful product rather than an isolated prototype.
 
@@ -158,7 +164,7 @@ The architecture should make it easy to change the product as personal requireme
 
 # Product Scope
 
-The application contains five connected sections.
+The application contains seven connected sections.
 
 ## Agenda
 
@@ -197,8 +203,22 @@ The Pending section supports:
 - custom colours and emojis
 - completion state
 - editing and deletion
+- subtasks and priority markers
 - group reordering
 - bulk removal of completed tasks
+
+## Wallet
+
+The Wallet supports:
+
+- two-tap expense and income entry
+- categories with emojis, colours and a type that sets the sign of each movement
+- optional monthly budget caps per category, copied from the previous month on request
+- monthly totals, daily average and a day-by-day chart
+- registering scheduled bills from the Agenda without retyping them
+- CSV export of all movements
+
+The Wallet is the only section where data has to reconcile. Only movements are stored; totals, charts and budget progress are calculated every time the section opens, so what is recorded and what is displayed cannot drift apart.
 
 ## Memories
 
@@ -211,6 +231,8 @@ The Memories section supports:
 - connection with past calendar events
 - latitude and longitude
 - a rotatable world globe showing where memories occurred
+- folders for grouping places, placing a memory by tapping the globe, and KML, KMZ and GPX import with duplicate detection
+- KML export by folder for use in offline map applications
 
 ## Journal
 
@@ -220,6 +242,16 @@ The Journal supports:
 - mood
 - optional titles
 - personal free-form text
+
+## Notes
+
+The Notes section supports:
+
+- reading notes, ideas and projects with type, source and tags
+- links between notes with `[[double brackets]]`, backlinks and automatic link updates on rename
+- basic Markdown with a small formatting toolbar
+- a network view where linked notes cluster together
+- Markdown import and export compatible with an Obsidian vault
 
 The value of the product comes not only from these modules individually, but from the relationships between them.
 
@@ -290,6 +322,8 @@ localStorage holds structured application state such as:
 - metrics
 - journal entries
 - memory metadata
+- wallet movements, categories and budgets
+- notes
 - preferences and configuration
 
 It was selected because it is simple and sufficient for the scale of a personal application.
@@ -429,6 +463,10 @@ Once loaded, the main product can operate without a network connection because:
 
 Internet access is required only for optional Drive synchronisation and initial page delivery.
 
+A service worker makes this explicit. The application shell is served network-first, so a new deployment reaches the phone quickly, with the cache as a fallback when there is no connection. Static assets are served cache-first, and Google authentication and Drive requests always bypass the cache.
+
+A web app manifest makes the application installable on the home screen, with shortcuts for the most frequent actions: recording an expense, checking off today's routine and writing in the journal.
+
 The responsive interface allows the same deployment to be used from desktop and mobile browsers.
 
 ---
@@ -447,6 +485,10 @@ This avoids:
 - map-service accounts
 - runtime map API dependencies
 - network requirements for normal rendering
+
+The 3D library that renders the globe is also served from the application's own files instead of a third-party CDN, which removed the last external runtime dependency of the core product.
+
+Memories can be grouped into folders, placed by tapping a point on the globe, imported from KML, KMZ and GPX files, and exported as KML so the same places can be used in offline map applications.
 
 Embedding and simplifying the geometry kept the application self-contained while still providing a meaningful visual way to revisit personal history.
 
@@ -513,6 +555,24 @@ AI-assisted implementation became effective because ambiguity had already been r
 
 ---
 
+# Hardening Through a Structured Audit
+
+After three months of daily use, I audited the application as if I had just inherited it, following the same method I use for professional repositories: security first, then failure modes, performance, dead code and maintainability. Each finding was fixed in its own commit, in order of severity.
+
+The most important findings were in the parts designed to protect data:
+
+- **Critical: a Drive error could erase the data it was meant to protect.** An HTTP error while downloading from Drive, such as a permission or rate-limit response, was interpreted as an empty Drive. The synchronisation then took the "Drive is empty" path and overwrote both the Drive file and its safety copy. The fix treats every non-successful response as an error, validates that a downloaded payload contains real data before any decision is made, and never overwrites the safety copy with an invalid payload.
+- **High: the merge could lose edits.** Most records did not carry a per-item edit timestamp, so the "newest version wins" rule could not work reliably for them.
+- **Automatic uploads without coordination.** Automatic pushes to Drive now share a write lock with manual synchronisation, are pinned to the Drive version they were based on, and show visible errors instead of failing silently.
+- **Local saving could switch itself off.** After a storage quota failure, local saving stayed disabled for the rest of the session.
+- **Smaller failure modes.** The current date froze if the application stayed open past midnight, the search for the Drive file was not deterministic when duplicates existed, and removing a photo while editing a memory was destructive before saving.
+
+Security fixes included neutralising spreadsheet formulas in CSV exports and self-hosting the 3D library. Performance fixes calculated yearly views in a single pass and rendered only the active section.
+
+The lesson was uncomfortable but useful: the riskiest code in the application was its safety net. A recovery path is rarely exercised, so it needs more scrutiny than the features it protects, not less.
+
+---
+
 # Key Engineering Decisions
 
 ## 1. Build a Static Application Instead of a Full Web Platform
@@ -543,7 +603,11 @@ When both local and remote copies change, the user chooses how to proceed.
 
 The globe's geographic data is included in the application so that core visualisation remains available offline.
 
-## 7. Optimise for One Real User
+## 7. Store Transactions, Derive Totals
+
+In the Wallet, only movements are stored. Every total and chart is recalculated, so the displayed numbers cannot disagree with the recorded ones.
+
+## 8. Optimise for One Real User
 
 The application was deliberately shaped around a specific workflow rather than attempting to become a generic productivity SaaS product.
 
@@ -566,7 +630,7 @@ However, it also creates limitations in:
 - team collaboration
 - long-term extensibility
 
-For a personal prototype and evolving single-user application, the trade-off was acceptable.
+For a personal prototype and evolving single-user application, the trade-off was acceptable. As the application grew to seven sections, `index.html` reached roughly 320 KB, which makes this the main structural debt of the project.
 
 ## localStorage vs. Structured Database
 
@@ -586,6 +650,8 @@ The synchronisation merge can reintroduce deleted records.
 
 This is less elegant than tombstone-based deletion tracking, but it reduces the risk of accidental permanent loss.
 
+The "newest version wins" rule also depends on each device's clock. A device with a badly skewed clock can make the merge choose the wrong version.
+
 ## Zero Backend vs. Advanced Collaboration
 
 The architecture cannot support real-time multiuser collaboration, server-side automation or centralised analytics without substantial changes.
@@ -600,16 +666,17 @@ The project produced a usable personal system rather than a disconnected technic
 
 The resulting application:
 
-- consolidates multiple personal-information workflows
-- reduces duplicate entry between planning and memories
+- consolidates multiple personal-information workflows, including expenses and linked notes
+- reduces duplicate entry between planning, memories and payments
 - works without a custom backend
 - keeps personal data local by default
 - supports desktop and mobile use
-- operates offline after loading
+- operates offline after loading and installs as a home-screen application
 - provides independent backup and restore
 - enables optional Drive-based synchronisation
 - avoids recurring hosting and database costs
 - can evolve quickly as personal requirements change
+- has been audited and hardened after months of real use
 
 The project also validated a broader development approach.
 
@@ -643,6 +710,10 @@ Connecting planned events to memories was more useful than adding another isolat
 
 Exportable JSON, limited Drive permissions and no proprietary backend make it easier to understand where personal information exists.
 
+## 7. Safety Nets Need the Most Scrutiny
+
+The critical bug found in the audit was in the code meant to prevent data loss. Recovery paths run rarely, so their defects stay hidden until the moment they matter most.
+
 ---
 
 # What I Would Do Differently Today
@@ -662,6 +733,8 @@ The most important areas for automated coverage would be:
 - date handling
 - synchronisation decisions
 
+The critical synchronisation bug found in the audit is the strongest argument: a test that simulated a failed Drive download would have caught it before it could cause harm.
+
 ## Add Formal Data Versions
 
 Backup files should contain an explicit schema version and migration process.
@@ -669,10 +742,6 @@ Backup files should contain an explicit schema version and migration process.
 ## Improve Deletion Synchronisation
 
 A production-grade merge would track deletion tombstones so that intentional removals could propagate safely.
-
-## Introduce a Service Worker
-
-A service worker could make offline behaviour and asset caching more explicit and reliable.
 
 ## Add Accessibility Validation
 
@@ -698,14 +767,13 @@ Modular Progressive Web Application
        Optional API Services
 ```
 
-A future version could add:
+The application is already an installable progressive web app with a service worker. A future version could add:
 
 - structured IndexedDB repositories
 - background synchronisation
 - versioned migrations
 - deletion tracking
 - encrypted backups
-- installable PWA behaviour
 - modular components
 - automated test coverage
 
