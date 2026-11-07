@@ -13,7 +13,7 @@ The project started from a recurring personal problem: every productivity tool s
 
 Some applications displayed calendar information well but were weak for day-to-day tasks. Others supported task management but not journaling, memories, habits or personal metrics. Paper offered unlimited flexibility, but it was too slow to maintain consistently.
 
-Instead of continuing to adapt my workflow to multiple incomplete tools, I designed a web application around the way I actually wanted to organise information.
+Instead of continuing to adapt my workflow to multiple incomplete tools, I designed a web application around the way I actually wanted to organize information.
 
 The resulting system integrates:
 
@@ -27,10 +27,10 @@ The resulting system integrates:
 - expense tracking with monthly budgets
 - linked notes with a network view, compatible with Obsidian
 - memories with photographs
-- geographic visualisation of memories, with KML and GPX import and export
+- geographic visualization of memories, with KML and GPX import and export
 - manual JSON backup and restore
 - CSV event import
-- optional Google Drive synchronisation
+- optional Google Drive synchronization
 - installable, offline-capable use as a progressive web app
 - static deployment through GitHub Pages
 
@@ -49,7 +49,7 @@ The speed came from combining:
 
 The first version was built in July 2026. Over the following months, real daily use led to two new sections, Wallet and Notes, and to turning the application into an installable progressive web app.
 
-In October 2026 I audited the application as if I had inherited it, and fixed the findings one by one in order of severity. The most important one was a critical data-loss path in the Drive synchronisation, described in [Hardening Through a Structured Audit](#hardening-through-a-structured-audit).
+In October 2026 I audited the application as if I had inherited it, and fixed the findings one by one in order of severity. The most important one was a critical data-loss path in the Drive synchronization, described in [Hardening Through a Structured Audit](#hardening-through-a-structured-audit).
 
 The project demonstrates how clear problem framing and proportional architecture can turn AI-assisted implementation into a useful product rather than an isolated prototype.
 
@@ -112,7 +112,7 @@ Plan what will happen
         ↓
 Manage what needs attention
         ↓
-Track recurring behaviour
+Track recurring behavior
         ↓
 Record what happened
         ↓
@@ -128,7 +128,7 @@ It also needed to meet several non-functional constraints:
 - usable on desktop and mobile
 - portable data
 - recoverable backups
-- optional cross-device synchronisation
+- optional cross-device synchronization
 - minimal deployment complexity
 - resilience when internet access was unavailable
 
@@ -148,7 +148,7 @@ The application should work without sending personal information to a third-part
 
 Data should be exportable, restorable and understandable without depending on a proprietary service.
 
-## Optional Cloud Synchronisation
+## Optional Cloud Synchronization
 
 Cloud storage should improve convenience without becoming mandatory for normal use.
 
@@ -175,7 +175,7 @@ The Agenda supports:
 - yearly overview
 - timed and all-day events
 - multi-day events
-- categories and colours
+- categories and colors
 - editing and deletion
 - CSV event import
 - conversion of past events into memories
@@ -200,7 +200,7 @@ The Routine section supports:
 The Pending section supports:
 
 - task groups by topic
-- custom colours and emojis
+- custom colors and emojis
 - completion state
 - editing and deletion
 - subtasks and priority markers
@@ -212,7 +212,7 @@ The Pending section supports:
 The Wallet supports:
 
 - two-tap expense and income entry
-- categories with emojis, colours and a type that sets the sign of each movement
+- categories with emojis, colors and a type that sets the sign of each movement
 - optional monthly budget caps per category, copied from the previous month on request
 - monthly totals, daily average and a day-by-day chart
 - registering scheduled bills from the Agenda without retyping them
@@ -225,7 +225,7 @@ The Wallet is the only section where data has to reconcile. Only movements are s
 The Memories section supports:
 
 - dated memories
-- categories and colours
+- categories and colors
 - photographs
 - yearly navigation
 - connection with past calendar events
@@ -306,7 +306,7 @@ There is no custom backend and no managed application database.
 
 The repository contains only application code.
 
-Personal events, journal entries, tasks, routines, memories and photographs remain in the user's browser unless synchronisation is explicitly enabled.
+Personal events, journal entries, tasks, routines, memories and photographs remain in the user's browser unless synchronization is explicitly enabled.
 
 ---
 
@@ -336,7 +336,7 @@ This avoids placing large binary values in localStorage and provides a more appr
 
 Images are reduced before storage to lower browser-space consumption.
 
-The separation kept the implementation lightweight while recognising that not all browser data has the same storage characteristics.
+The separation kept the implementation lightweight while recognizing that not all browser data has the same storage characteristics.
 
 ---
 
@@ -362,15 +362,15 @@ The mental model is intentionally simple:
 
 ```text
 Browser = daily working copy
-Drive   = optional synchronisation
+Drive   = optional synchronization
 JSON    = independent safety backup
 ```
 
 ---
 
-# Optional Google Drive Synchronisation
+# Optional Google Drive Synchronization
 
-The application can synchronise its data through the user's own Google Drive.
+The application can synchronize its data through the user's own Google Drive.
 
 This capability was designed as optional infrastructure rather than as a dependency.
 
@@ -385,19 +385,19 @@ The design provides:
 - no database account
 - no recurring infrastructure cost
 - limited Drive permissions
-- user ownership of the synchronisation file
+- user ownership of the synchronization file
 
 ---
 
-# Synchronisation Conflict Handling
+# Synchronization Conflict Handling
 
 <p align="center">
   <img src="./diagrams/svg/backup-synchronisation-flow.svg"
-       alt="Backup, optional Google Drive synchronisation and conflict-resolution flow"
+       alt="Backup, optional Google Drive synchronization and conflict-resolution flow"
        width="950">
 </p>
 
-Synchronisation becomes difficult when local and remote copies both change.
+Synchronization becomes difficult when local and remote copies both change.
 
 The application avoids silently deciding which version survives.
 
@@ -427,25 +427,25 @@ Deletion is handled conservatively.
 
 A deletion performed on one device may not propagate through a merge if the other device still contains the record.
 
-This trade-off favours recovering an unwanted record over permanently losing wanted information.
+This trade-off favors recovering an unwanted record over permanently losing wanted information.
 
 ---
 
-# Synchronisation Safety Net
+# Synchronization Safety Net
 
 Before replacing the primary Drive file, the application stores the previous content in a second backup file.
 
 Google Drive's own file-version history provides another layer of protection.
 
-The approach follows a defence-in-depth model:
+The approach follows a defense-in-depth model:
 
 - current browser data
-- current Drive synchronisation file
+- current Drive synchronization file
 - previous Drive copy
 - Drive version history
 - manually downloaded JSON backups
 
-For a personal system, this was a more proportionate solution than building a full synchronisation backend.
+For a personal system, this was a more proportionate solution than building a full synchronization backend.
 
 ---
 
@@ -461,7 +461,7 @@ Once loaded, the main product can operate without a network connection because:
 - geographic outlines are embedded in the application
 - the world globe does not depend on an external map service
 
-Internet access is required only for optional Drive synchronisation and initial page delivery.
+Internet access is required only for optional Drive synchronization and initial page delivery.
 
 A service worker makes this explicit. The application shell is served network-first, so a new deployment reaches the phone quickly, with the cache as a fallback when there is no connection. Static assets are served cache-first, and Google authentication and Drive requests always bypass the cache.
 
@@ -471,7 +471,7 @@ The responsive interface allows the same deployment to be used from desktop and 
 
 ---
 
-# Embedded Geographic Visualisation
+# Embedded Geographic Visualization
 
 The Memories section includes a rotatable world globe.
 
@@ -518,7 +518,7 @@ Knowing how browser storage, static applications, OAuth, Google APIs and GitHub 
 
 The AI agents received bounded implementation tasks rather than one broad request to build a productivity app.
 
-Instructions focused on specific modules, behaviours and acceptance conditions.
+Instructions focused on specific modules, behaviors and acceptance conditions.
 
 ## 4. Immediate Validation
 
@@ -528,7 +528,7 @@ Features were accepted, corrected or refined based on whether they solved the or
 
 The AI agents accelerated implementation.
 
-Problem framing, architecture, prioritisation, validation and product coherence remained human responsibilities.
+Problem framing, architecture, prioritization, validation and product coherence remained human responsibilities.
 
 ---
 
@@ -561,13 +561,13 @@ After three months of daily use, I audited the application as if I had just inhe
 
 The most important findings were in the parts designed to protect data:
 
-- **Critical: a Drive error could erase the data it was meant to protect.** An HTTP error while downloading from Drive, such as a permission or rate-limit response, was interpreted as an empty Drive. The synchronisation then took the "Drive is empty" path and overwrote both the Drive file and its safety copy. The fix treats every non-successful response as an error, validates that a downloaded payload contains real data before any decision is made, and never overwrites the safety copy with an invalid payload.
+- **Critical: a Drive error could erase the data it was meant to protect.** An HTTP error while downloading from Drive, such as a permission or rate-limit response, was interpreted as an empty Drive. The synchronization then took the "Drive is empty" path and overwrote both the Drive file and its safety copy. The fix treats every non-successful response as an error, validates that a downloaded payload contains real data before any decision is made, and never overwrites the safety copy with an invalid payload.
 - **High: the merge could lose edits.** Most records did not carry a per-item edit timestamp, so the "newest version wins" rule could not work reliably for them.
-- **Automatic uploads without coordination.** Automatic pushes to Drive now share a write lock with manual synchronisation, are pinned to the Drive version they were based on, and show visible errors instead of failing silently.
+- **Automatic uploads without coordination.** Automatic pushes to Drive now share a write lock with manual synchronization, are pinned to the Drive version they were based on, and show visible errors instead of failing silently.
 - **Local saving could switch itself off.** After a storage quota failure, local saving stayed disabled for the rest of the session.
 - **Smaller failure modes.** The current date froze if the application stayed open past midnight, the search for the Drive file was not deterministic when duplicates existed, and removing a photo while editing a memory was destructive before saving.
 
-Security fixes included neutralising spreadsheet formulas in CSV exports and self-hosting the 3D library. Performance fixes calculated yearly views in a single pass and rendered only the active section.
+Security fixes included neutralizing spreadsheet formulas in CSV exports and self-hosting the 3D library. Performance fixes calculated yearly views in a single pass and rendered only the active section.
 
 The lesson was uncomfortable but useful: the riskiest code in the application was its safety net. A recovery path is rarely exercised, so it needs more scrutiny than the features it protects, not less.
 
@@ -589,7 +589,7 @@ Personal content remains in browser storage or the user's own Drive file.
 
 The product remains useful without Google Drive.
 
-Synchronisation improves convenience but does not define the core architecture.
+Synchronization improves convenience but does not define the core architecture.
 
 ## 4. Separate Structured and Binary Storage
 
@@ -601,13 +601,13 @@ When both local and remote copies change, the user chooses how to proceed.
 
 ## 6. Embed Critical Visual Assets
 
-The globe's geographic data is included in the application so that core visualisation remains available offline.
+The globe's geographic data is included in the application so that core visualization remains available offline.
 
 ## 7. Store Transactions, Derive Totals
 
 In the Wallet, only movements are stored. Every total and chart is recalculated, so the displayed numbers cannot disagree with the recorded ones.
 
-## 8. Optimise for One Real User
+## 8. Optimize for One Real User
 
 The application was deliberately shaped around a specific workflow rather than attempting to become a generic productivity SaaS product.
 
@@ -642,11 +642,11 @@ The architecture works because the application is single-user and personal.
 
 Data stored locally belongs to a specific browser and device.
 
-JSON backups and Drive synchronisation reduce this limitation, but the experience remains different from a centrally hosted account-based application.
+JSON backups and Drive synchronization reduce this limitation, but the experience remains different from a centrally hosted account-based application.
 
 ## Conservative Merge vs. Deletion Propagation
 
-The synchronisation merge can reintroduce deleted records.
+The synchronization merge can reintroduce deleted records.
 
 This is less elegant than tombstone-based deletion tracking, but it reduces the risk of accidental permanent loss.
 
@@ -654,7 +654,7 @@ The "newest version wins" rule also depends on each device's clock. A device wit
 
 ## Zero Backend vs. Advanced Collaboration
 
-The architecture cannot support real-time multiuser collaboration, server-side automation or centralised analytics without substantial changes.
+The architecture cannot support real-time multiuser collaboration, server-side automation or centralized analytics without substantial changes.
 
 Those capabilities were outside the product's purpose.
 
@@ -673,7 +673,7 @@ The resulting application:
 - supports desktop and mobile use
 - operates offline after loading and installs as a home-screen application
 - provides independent backup and restore
-- enables optional Drive-based synchronisation
+- enables optional Drive-based synchronization
 - avoids recurring hosting and database costs
 - can evolve quickly as personal requirements change
 - has been audited and hardened after months of real use
@@ -700,7 +700,7 @@ Keeping data local improves privacy, but backup, portability and conflict handli
 
 ## 4. AI Accelerates Clear Work More Than Ambiguous Work
 
-The agents were most effective when the task had explicit behaviour, constraints and acceptance criteria.
+The agents were most effective when the task had explicit behavior, constraints and acceptance criteria.
 
 ## 5. Integration Creates More Value Than Feature Count
 
@@ -718,28 +718,28 @@ The critical bug found in the audit was in the code meant to prevent data loss. 
 
 # What I Would Do Differently Today
 
-## Modularise the Application
+## Modularize the Application
 
-I would separate the application into modules for state management, storage, synchronisation and each product area.
+I would separate the application into modules for state management, storage, synchronization and each product area.
 
 ## Add Automated Tests
 
 The most important areas for automated coverage would be:
 
 - event-to-memory linking
-- monthly habit behaviour
+- monthly habit behavior
 - backup and restore
 - merge conflict resolution
 - date handling
-- synchronisation decisions
+- synchronization decisions
 
-The critical synchronisation bug found in the audit is the strongest argument: a test that simulated a failed Drive download would have caught it before it could cause harm.
+The critical synchronization bug found in the audit is the strongest argument: a test that simulated a failed Drive download would have caught it before it could cause harm.
 
 ## Add Formal Data Versions
 
 Backup files should contain an explicit schema version and migration process.
 
-## Improve Deletion Synchronisation
+## Improve Deletion Synchronization
 
 A production-grade merge would track deletion tombstones so that intentional removals could propagate safely.
 
@@ -770,7 +770,7 @@ Modular Progressive Web Application
 The application is already an installable progressive web app with a service worker. A future version could add:
 
 - structured IndexedDB repositories
-- background synchronisation
+- background synchronization
 - versioned migrations
 - deletion tracking
 - encrypted backups

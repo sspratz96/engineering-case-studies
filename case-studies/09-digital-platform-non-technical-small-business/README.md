@@ -82,7 +82,7 @@ The business needed to support multiple types of users and workflows:
 - families requesting workshop reservations
 - administrators updating workshops and content
 - founders following commercial opportunities
-- authorised users reviewing operational information
+- authorized users reviewing operational information
 
 The initial requirements were also ambiguous. The founders could explain what they wanted to see, but several technical questions still had to be resolved:
 
@@ -163,7 +163,7 @@ The workshop workflow supported:
 
 ## Administrative Operations
 
-Authorised users could manage information such as:
+Authorized users could manage information such as:
 
 - workshops
 - schedules
@@ -192,7 +192,7 @@ The CRM was intentionally lightweight and aligned with the scale of the business
 
 # Architecture
 
-The architecture prioritised simplicity, low operational cost and tools familiar to the founders.
+The architecture prioritized simplicity, low operational cost and tools familiar to the founders.
 
 <p align="center">
   <img src="./diagrams/svg/platform-architecture.svg"
@@ -218,7 +218,7 @@ Firebase Hosting provided simple static deployment, while Apps Script supplied b
 
 Google Sheets provided an accessible operational surface for structured business information.
 
-The founders could understand and inspect the underlying data without specialised database tools.
+The founders could understand and inspect the underlying data without specialized database tools.
 
 ## Fast Validation
 
@@ -271,7 +271,7 @@ This helped prevent common operational inconsistencies such as duplicated capaci
 
 # Concurrency and Consistency
 
-Google Sheets is not a transactional database, but the booking workflow still required transaction-like behaviour.
+Google Sheets is not a transactional database, but the booking workflow still required transaction-like behavior.
 
 The implementation used locking and revision checks to reduce the risk of:
 
@@ -314,7 +314,7 @@ The backend also applied controls such as:
 - type validation
 - length limits
 - identifier validation
-- formula neutralisation
+- formula neutralization
 - controlled status values
 - revision checks
 - explicit public-field selection
@@ -325,7 +325,7 @@ The backend also applied controls such as:
        width="950">
 </p>
 
-These controls reduced the risk of accidental corruption, unauthorised data exposure and formula injection.
+These controls reduced the risk of accidental corruption, unauthorized data exposure and formula injection.
 
 ---
 
@@ -333,7 +333,7 @@ These controls reduced the risk of accidental corruption, unauthorised data expo
 
 One of the central product requirements was that routine updates should not require a developer.
 
-The administrative interface allowed authorised users to manage selected operational and public information without directly editing the application source.
+The administrative interface allowed authorized users to manage selected operational and public information without directly editing the application source.
 
 This included workshops, schedules, products, stories, gallery records and reservation statuses.
 
@@ -350,7 +350,7 @@ The deployment workflow included checks for:
 - access mode configuration
 - security-sensitive settings
 - unresolved configuration placeholders
-- expected hosting behaviour
+- expected hosting behavior
 - selected performance constraints
 
 A deployment could fail when critical assumptions were not satisfied.
@@ -399,7 +399,7 @@ The ecommerce component retained a future path toward Shopify rather than attemp
 
 ## Google Sheets Instead of a Database
 
-Google Sheets improved accessibility and reduced setup cost, but introduced limitations in concurrency, schema enforcement, relational modelling, observability, migration management and large-scale performance.
+Google Sheets improved accessibility and reduced setup cost, but introduced limitations in concurrency, schema enforcement, relational modeling, observability, migration management and large-scale performance.
 
 It was appropriate for the early stage and expected volume, but it should not be treated as the optimal storage layer at every scale.
 
@@ -415,7 +415,7 @@ A future version would extract reusable components and separate domain logic mor
 
 A custom experience made rapid visual and workflow validation possible.
 
-A production ecommerce operation would benefit from Shopify's mature payment, inventory, order and fulfilment capabilities.
+A production ecommerce operation would benefit from Shopify's mature payment, inventory, order and fulfillment capabilities.
 
 ## Lightweight CRM Instead of a Commercial Product
 
@@ -481,7 +481,7 @@ It created a shared environment where the founders could test assumptions and cl
 
 # What I Would Do Differently Today
 
-## Modularise the Frontend Earlier
+## Modularize the Frontend Earlier
 
 As the platform expanded, several pages accumulated substantial HTML, CSS and JavaScript.
 
@@ -493,9 +493,9 @@ Reservation transitions, capacity changes and access rules should be covered by 
 
 ## Introduce Structured Observability
 
-A stronger implementation would centralise application errors, failed operations, latency and deployment events.
+A stronger implementation would centralize application errors, failed operations, latency and deployment events.
 
-## Formalise the Data Model
+## Formalize the Data Model
 
 The Sheets-based model could be documented with explicit schemas, identifiers, relationships and migration rules.
 
