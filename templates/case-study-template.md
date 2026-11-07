@@ -117,9 +117,9 @@ Content
 - US English spelling.
 
 Diagrams
-- Stored in diagrams/svg, diagrams/png and diagrams/drawio, with the same file name.
-- The README embeds the SVG.
-- Style: white background, Arial, 28 px title, light grey boxes, dark grey arrows.
+- SVG is required, stored in diagrams/svg and embedded in the README.
+- PNG (diagrams/png) and an editable .drawio (diagrams/drawio) are added when available, with the same file name.
+- Style: white background, Arial, 28 px title, light gray boxes, dark gray arrows.
 - A .drawio file is only committed if it is genuinely editable.
 
 Links
