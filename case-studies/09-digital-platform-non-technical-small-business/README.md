@@ -63,7 +63,9 @@ At the time of writing, the platform remains under internal development and has 
 
 The source code is maintained in a private repository, with access currently limited to the two founders and myself. This controlled environment allows us to validate the product experience, administrative workflows, reservation logic, data access boundaries and deployment configuration before making the platform available to external users.
 
-A first public launch is tentatively planned for **November 2026**.
+A first public launch, initially planned for November 2026, has been postponed while internal development continues.
+
+The founders have also defined the long-term commerce boundary: the storefront, products and checkout will move to Shopify, while the CRM and Taller de Bichos remain custom systems whose code and deployments stay under version control in GitHub.
 
 The capabilities and outcomes described in this case study therefore refer to the current internal implementation and its validated workflows. They should not be interpreted as evidence of active public usage, customer adoption or production-scale performance.
 
@@ -437,7 +439,7 @@ The internal version currently supports:
 - lightweight commercial follow-up through a custom CRM
 - automated email and deployment processes
 - separate development and public-access configurations
-- a practical future path toward Shopify adoption
+- a defined boundary for moving the commerce layer to Shopify
 
 The platform has also given the founders a concrete environment in which to review the product and refine their requirements.
 
@@ -499,7 +501,9 @@ The Sheets-based model could be documented with explicit schemas, identifiers, r
 
 ## Define the Shopify Boundary Earlier
 
-The platform would benefit from a more explicit decision about which commerce responsibilities remain custom and which are delegated to Shopify.
+The platform would have benefited from an earlier, explicit decision about which commerce responsibilities remain custom and which are delegated to Shopify.
+
+That boundary has since been defined: commerce moves to Shopify, while the CRM and workshop operations remain custom. Defining it at the start would have avoided building commerce features that will later be replaced.
 
 ---
 
