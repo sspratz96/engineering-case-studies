@@ -5,6 +5,8 @@
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20Streamlit-orange)
 ![Decision](https://img.shields.io/badge/decision-Build%20vs%20Buy-lightgrey)
 
+**Context:** medical technology manufacturer · Germany · 2024 – 2025
+
 ## Executive Summary
 
 During my time at Olympus EMEA, a production team needed a practical way to perform process capability analysis without relying on expensive enterprise statistical software licenses.

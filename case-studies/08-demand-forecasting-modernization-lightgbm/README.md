@@ -5,6 +5,8 @@
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Production%20Planning-orange)
 ![Methods](https://img.shields.io/badge/methods-LightGBM%20%7C%20Feature%20Engineering%20%7C%20Bagging-lightgrey)
 
+**Context:** food company · Chile · 2021 – 2023
+
 ## Executive Summary
 
 This case study documents the modernization of a demand forecasting module inside a larger production planning codebase.

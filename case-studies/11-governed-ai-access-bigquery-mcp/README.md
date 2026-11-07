@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-MCP%20%7C%20OAuth%20Identity%20Passthrough-orange)
 ![Stack](https://img.shields.io/badge/stack-FastMCP%20%7C%20Cloud%20Run%20%7C%20BigQuery-lightgrey)
 
+**Context:** live entertainment production company · Chile · 2025 – present
+
 ## Executive Summary
 
 Employees had started connecting AI assistants such as Claude and ChatGPT directly to the company's BigQuery data warehouse. Through those connections, the assistants inherited each user's full permissions, including write access for people who legitimately need it for their daily work, and there was no limit on how much data a single prompt could scan.

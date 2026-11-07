@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-Local--First%20%7C%20Zero--Backend-orange)
 ![Stack](https://img.shields.io/badge/stack-HTML%20%7C%20JavaScript%20%7C%20IndexedDB%20%7C%20PWA%20%7C%20Google%20Drive-lightgrey)
 
+**Context:** personal project · 2026 – present
+
 ## Executive Summary
 
 This case study documents the design and rapid implementation of a personal productivity web application built to replace a fragmented collection of calendars, task managers, habit trackers, journals and memory applications.

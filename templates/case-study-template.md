@@ -13,6 +13,8 @@ Status values, as defined in the root README:
   Internal Development  not launched publicly yet
 -->
 
+**Context:** type of organization · country · start year – end year (or present)
+
 ## Executive Summary
 
 Two to four short paragraphs: the problem, what was built, the main engineering idea and the most important result. A reader who stops here should understand the case.

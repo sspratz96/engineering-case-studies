@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-Medallion%20%7C%20Google%20Cloud-orange)
 ![Stack](https://img.shields.io/badge/stack-BigQuery%20%7C%20Cloud%20Run%20%7C%20FastAPI%20%7C%20Vue-lightgrey)
 
+**Context:** live entertainment production company · Chile · 2025 – present
+
 ## Executive Summary
 
 This case study documents how I built the data and platform function of a company that did not have one.

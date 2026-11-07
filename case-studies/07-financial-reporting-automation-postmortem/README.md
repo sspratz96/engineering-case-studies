@@ -5,6 +5,8 @@
 ![Domain](https://img.shields.io/badge/domain-Finance%20%7C%20Reporting-orange)
 ![Stack](https://img.shields.io/badge/stack-BigQuery%20%7C%20Google%20Sheets%20%7C%20ERP-lightgrey)
 
+**Context:** food company · Chile · 2021 – 2023
+
 ## Executive Summary
 
 This case study documents an attempt to automate and optimize the monthly financial statement reporting process.

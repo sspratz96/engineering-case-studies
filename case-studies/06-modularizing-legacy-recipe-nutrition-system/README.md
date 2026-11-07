@@ -5,6 +5,8 @@
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Food%20Production-orange)
 ![Stack](https://img.shields.io/badge/stack-Python%20%7C%20BigQuery%20%7C%20Google%20Sheets-lightgrey)
 
+**Context:** food company · Chile · 2021 – 2023
+
 ## Executive Summary
 
 This case study documents the modernization of a legacy recipe recalculation and nutritional table workflow.

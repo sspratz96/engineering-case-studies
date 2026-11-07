@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-Medallion%20Data%20Model-orange)
 ![Stack](https://img.shields.io/badge/stack-Mage%20%7C%20AWS%20ECS%20%7C%20PostgreSQL-lightgrey)
 
+**Context:** early-stage FinOps startup · Chile · 2025
+
 ## Executive Summary
 
 This case study documents the design of a multi-cloud FinOps data platform built to centralize, standardize and expose cloud cost data across providers.

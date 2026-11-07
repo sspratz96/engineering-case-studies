@@ -5,6 +5,8 @@
 ![Domain](https://img.shields.io/badge/domain-Operations%20%7C%20Production-orange)
 ![Methods](https://img.shields.io/badge/methods-SKU%20Matching%20%7C%20SVM%20%7C%20Weighted%20Costing-lightgrey)
 
+**Context:** food company · Chile · 2021 – 2023
+
 ## Executive Summary
 
 This case study documents the design of an operational cost traceability system built to understand how real supplier invoice costs flowed through a food production chain.

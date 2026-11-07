@@ -5,6 +5,8 @@
 ![Architecture](https://img.shields.io/badge/architecture-MCP%20%7C%20Semantic%20Context-orange)
 ![Stack](https://img.shields.io/badge/stack-LLM%20%7C%20MCP%20%7C%20PostgreSQL-lightgrey)
 
+**Context:** early-stage FinOps startup · Chile · 2025
+
 ## Executive Summary
 
 This case study documents the design of an AI-enabled workflow built on top of governed FinOps data.
