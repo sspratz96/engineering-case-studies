@@ -1,0 +1,17 @@
+name: Docs checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check relative links and case study index
+        run: python3 .github/scripts/check_docs.py
