@@ -33,6 +33,7 @@ The goal is to share the engineering thinking behind building data platforms, au
 | 04 | [Enterprise AI Workflows on Governed Data](./case-studies/04-enterprise-ai-workflows/) | Completed v1.0 | LLMs, MCP, enterprise automation |
 | 08 | [Demand Forecasting Modernization with LightGBM](./case-studies/08-demand-forecasting-modernization-lightgbm/) | Completed v1.0 | Forecasting, LightGBM, feature engineering |
 | 09 | [Digital Platform for a Non-Technical Small Business](./case-studies/09-digital-platform-non-technical-small-business/) | Internal Development | Product engineering, serverless, workflow design |
+| 11 | [Governed AI Access to a Data Warehouse Through MCP](./case-studies/11-governed-ai-access-bigquery-mcp/) | In Production | AI governance, MCP, OAuth, BigQuery |
 
 ## Additional Case Studies
 
@@ -43,7 +44,7 @@ The goal is to share the engineering thinking behind building data platforms, au
 | 07 | [Financial Reporting Automation Postmortem](./case-studies/07-financial-reporting-automation-postmortem/) | Completed v1.0 | Financial reporting, automation, scope management |
 | 10 | [Building a Privacy-First Personal Productivity System](./case-studies/10-privacy-first-personal-productivity-system/) | Completed v1.0 | Local-first architecture, browser storage, AI-assisted development |
 
-**Status** describes the project itself: *In Progress* means the system is still evolving, and *Internal Development* means it has not been launched publicly yet. No case study reports usage or production metrics that do not exist.
+**Status** describes the project itself: *In Progress* means the system is still evolving, and *Internal Development* means it has not been launched publicly yet, and *In Production* means it is live and in daily use. No case study reports usage or production metrics that do not exist.
 
 ---
 

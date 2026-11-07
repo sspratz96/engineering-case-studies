@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 740" width="1240" height="740" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker></defs>
+<rect width="1240" height="740" fill="#ffffff"/>
+<text x="620.0" y="56" text-anchor="middle" font-size="28" font-weight="bold" fill="#1f2328">Governed AI Access Path</text>
+<rect x="24" y="96" width="1192" height="124" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="116" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">AI CLIENTS</text>
+<rect x="24" y="240" width="1192" height="148" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="260" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">ACCESS LAYER</text>
+<rect x="24" y="408" width="1192" height="148" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="428" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">DATA LAYER</text>
+<rect x="24" y="576" width="1192" height="112" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="596" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">CLOSED PATHS</text>
+<path d="M220.0,200.0 L220.0,238.0 L512.0,238.0 L512.0,276.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M620.0,200.0 L620.0,276.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M1020.0,200.0 L1020.0,238.0 L728.0,238.0 L728.0,276.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M440.0,322.0 L360.0,322.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="372" y="314" font-size="12" fill="#4b5563" text-anchor="start">sign-in</text>
+<path d="M880.0,322.0 L800.0,322.0" fill="none" stroke="#4b5563" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#arrow)"/>
+<path d="M620.0,368.0 L620.0,444.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<text x="628" y="412" font-size="12" fill="#4b5563" text-anchor="start">user token</text>
+<path d="M800.0,490.0 L880.0,490.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M440.0,490.0 L360.0,490.0" fill="none" stroke="#4b5563" stroke-width="1.6" stroke-dasharray="6,5" marker-end="url(#arrow)"/>
+<rect x="42" y="135" width="360" height="68" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="132" width="360" height="68" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="220.0" y="161.5" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Claude</text>
+<text x="220.0" y="181.5" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">organization connector</text>
+<rect x="442" y="135" width="360" height="68" rx="8" fill="#e6e8ec"/>
+<rect x="440" y="132" width="360" height="68" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="620.0" y="161.5" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">ChatGPT</text>
+<text x="620.0" y="181.5" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">enterprise app, added by admin</text>
+<rect x="842" y="135" width="360" height="68" rx="8" fill="#e6e8ec"/>
+<rect x="840" y="132" width="360" height="68" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="1020.0" y="161.5" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">IDE and CLI clients</text>
+<text x="1020.0" y="181.5" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">any MCP-compatible client</text>
+<rect x="42" y="279" width="320" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="276" width="320" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="200.0" y="309.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Company identity provider</text>
+<text x="200.0" y="329.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">company accounts only</text>
+<text x="200.0" y="346.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">internal consent · read-only scope</text>
+<rect x="442" y="279" width="360" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="440" y="276" width="360" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="620.0" y="309.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">MCP server on Cloud Run</text>
+<text x="620.0" y="329.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">5 tools · results capped at 500 rows</text>
+<text x="620.0" y="346.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">runtime account has no data access</text>
+<rect x="882" y="279" width="320" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="880" y="276" width="320" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="1040.0" y="309.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Secret Manager</text>
+<text x="1040.0" y="329.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">OAuth client secret</text>
+<text x="1040.0" y="346.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">token signing key</text>
+<rect x="42" y="447" width="320" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="444" width="320" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="200.0" y="477.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Audit logs</text>
+<text x="200.0" y="497.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">every query attributed</text>
+<text x="200.0" y="514.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">to the real user</text>
+<rect x="442" y="447" width="360" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="440" y="444" width="360" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="620.0" y="477.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">BigQuery API</text>
+<text x="620.0" y="497.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">runs with the user&#x27;s own token</text>
+<text x="620.0" y="514.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">writes rejected · 1 GB cap per query</text>
+<rect x="882" y="447" width="320" height="92" rx="8" fill="#e6e8ec"/>
+<rect x="880" y="444" width="320" height="92" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="1040.0" y="477.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Warehouse datasets</text>
+<text x="1040.0" y="497.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">visibility = the user&#x27;s own IAM</text>
+<text x="1040.0" y="514.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">across three projects</text>
+<rect x="42" y="615" width="1160" height="60" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="612" width="1160" height="60" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="620.0" y="637.5" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Disabled together with IT</text>
+<text x="620.0" y="657.5" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">official BigQuery connector in AI platforms · direct AI-vendor OAuth access to Google Cloud</text>
+<text x="620.0" y="722" text-anchor="middle" font-size="13" font-style="italic" fill="#4b5563">Writes are rejected by Google&#x27;s API because the token itself cannot write, not by application code.</text>
+</svg>

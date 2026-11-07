@@ -162,6 +162,8 @@ AI assistants reach the warehouse through a Model Context Protocol (MCP) server 
 
 This replaced a vendor connector that offered full permissions and no organizational control. It is the technical foundation of the company's AI adoption strategy, which prioritizes governance and secure access before broader rollout.
 
+The design, its security model and its validation are described in [Governed AI Access to a Data Warehouse Through MCP](../11-governed-ai-access-bigquery-mcp/).
+
 ---
 
 # Key Engineering Decisions
