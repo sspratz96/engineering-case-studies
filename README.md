@@ -27,7 +27,7 @@ The goal is to share the engineering thinking behind building data platforms, au
 
 | # | Case Study | Status | Focus |
 |---|---|---|---|
-| 01 | [Building a Single Source of Truth](./case-studies/01-building-a-single-source-of-truth/) | In Progress | Data platforms, governance, automation |
+| 01 | [Building a Single Source of Truth: A Data Platform Function Built From Zero](./case-studies/01-building-a-single-source-of-truth/) | In Progress | Data platform, governance, internal platform, governed AI access |
 | 02 | [Process Capability Analysis Tool](./case-studies/02-process-capability-analysis/) | Completed v1.0 | Statistical analysis, Python, UX |
 | 03 | [FinOps Data Platform](./case-studies/03-finops-data-platform/) | Completed v1.0 | FinOps, cloud cost analytics, data pipelines |
 | 04 | [Enterprise AI Workflows on Governed Data](./case-studies/04-enterprise-ai-workflows/) | Completed v1.0 | LLMs, MCP, enterprise automation |

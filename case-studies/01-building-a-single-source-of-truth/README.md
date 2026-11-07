@@ -1,21 +1,39 @@
-# Building a Single Source of Truth
+# Building a Single Source of Truth: A Data Platform Function Built From Zero
 
 ![Status](https://img.shields.io/badge/status-In%20Progress-blue)
-![Focus](https://img.shields.io/badge/focus-Data%20Engineering-success)
-![Architecture](https://img.shields.io/badge/architecture-Cloud%20Native-orange)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Focus](https://img.shields.io/badge/focus-Data%20Platform-success)
+![Architecture](https://img.shields.io/badge/architecture-Medallion%20%7C%20Google%20Cloud-orange)
+![Stack](https://img.shields.io/badge/stack-BigQuery%20%7C%20Cloud%20Run%20%7C%20FastAPI%20%7C%20Vue-lightgrey)
 
 ## Executive Summary
 
-As organizations grow, data naturally becomes fragmented.
+This case study documents how I built the data and platform function of a company that did not have one.
 
-Enterprise systems coexist with spreadsheets, manually maintained reports, and department-specific databases. Over time, each team develops its own processes, metrics, and definitions, often resulting in multiple versions of the same business information.
+When I joined a large live entertainment production company in Chile, there was no data warehouse, no internal software platform, no engineering team and no technology area in the organization chart. Business data lived in disconnected spreadsheets, each with its own structure, and consolidating it for reporting took hours of manual work.
 
-This fragmentation slows decision-making, reduces trust in data, and increases the operational effort required to maintain reporting processes.
+Over the following months I designed, built and now operate an ecosystem that includes:
 
-This case study presents an engineering approach to transforming fragmented operational data into a centralized and trusted data platform.
+- a BigQuery data warehouse that integrates the ERP, the settlement platform, ticketing providers, expense management and central bank indicators
+- an internal platform used across the company by approximately 70 people
+- engineering governance for every component: pull-request-based change control, code owners, CI/CD and keyless deployment
+- a cost and access observability portal for the cloud environment
+- governed, read-only access for AI assistants to the warehouse
 
-Rather than focusing on implementation details or proprietary systems, the objective is to describe the engineering principles, architectural decisions, and lessons learned while designing a platform intended to become the organization's Single Source of Truth.
+Because there was no previous system, most outcomes in this case study are capabilities that did not exist before, not improvements measured against a baseline. Where a real before-and-after comparison exists, it is stated explicitly.
+
+The platform is in active use and still evolving.
+
+---
+
+# Context
+
+The company is a finance-led organization of approximately 70 people. Its operations revolve around shows: each one involves ticket sales through external providers, settlements with partners, expenses, accounting in the ERP and executive reporting.
+
+There was no technology or data area. The data and platform function did not exist as a role; it was created from Finance and is currently carried by one engineer, which is me. In practice, that means I act as data engineer, backend and frontend developer, platform and DevOps engineer, and cloud architect for the same ecosystem.
+
+That context shaped every decision in this case study. The architecture had to be operable by one person, understandable by the next person who joins, and safe enough that a single mistake could not silently corrupt business data.
+
+The work started in November 2025 and is ongoing.
 
 ---
 
@@ -25,104 +43,57 @@ Most organizations do not suffer from a lack of data.
 
 They suffer from a lack of trusted data.
 
-Different departments frequently consume information from different sources:
-
-- ERP systems
-- Spreadsheets maintained by individual teams
-- Manual reports
-- Department-specific databases
-- Ad-hoc exports
+In this case, the problem started one step earlier: there was barely any structured data at all.
 
 <p align="center">
   <img src="./diagrams/svg/current-state.svg" alt="Current state fragmented data architecture" width="900">
 </p>
 
-Although every dataset may be technically correct, they often represent different moments in time, different business rules, or different transformation logic.
+The starting point had five characteristics:
 
-As a consequence:
+- **Fragmented sources.** Information lived in the ERP, an external settlement platform, ticketing providers and an expense management tool, and was combined by hand in spreadsheets.
+- **No common structure.** Every spreadsheet had its own layout, so the same metric could be calculated differently depending on who prepared the report.
+- **No production-side data.** There was no quantitative record of operational work, so reporting covered finance but not production.
+- **Manual consolidation.** Preparing recurring reports took hours, leaving little time to review whether the numbers were right.
+- **No change control.** Cloud resources could be created by hand, without a repository, an owner or documentation.
 
-- reports provide conflicting numbers
-- teams spend significant time validating information instead of using it
-- business decisions become dependent on who generated the report
-- automation becomes increasingly difficult
-- new software projects inherit inconsistent data from the beginning
-
-The objective was not simply to centralize data.
-
-The real challenge was to build a platform that people could trust enough to stop maintaining their own versions of the truth.
-
----
-
-# Why This Problem Exists
-
-Data fragmentation is rarely caused by poor technology.
-
-More often, it is the natural consequence of organizational growth.
-
-As new business needs emerge, teams build local solutions to solve immediate problems:
-
-- spreadsheets become operational systems
-- manual processes evolve into business-critical workflows
-- reporting logic is duplicated across departments
-- data ownership becomes unclear
-
-Over time, these independent solutions create a complex ecosystem where multiple versions of the same information coexist.
-
-The technical challenge is therefore only one part of the problem.
-
-The organizational challenge is enabling different teams to converge toward a common source of trusted information.
+The objective was not simply to centralize data. It was to build a foundation that people could trust enough to stop maintaining their own versions of the truth, and that could be operated safely by a very small team.
 
 ---
 
 # Design Principles
 
-Before selecting technologies or defining the architecture, a set of engineering principles guided every design decision.
-
 ## 1. One Trusted Source
 
-Business information should originate from a single governed source.
-
-Every report, dashboard, automation, or internal application should consume data from the same platform rather than maintaining independent datasets.
-
----
+Every report, internal application and automation consumes data from the same governed platform instead of maintaining its own dataset.
 
 ## 2. Automate Data Collection
 
-Whenever possible, manual data entry should be replaced by automated ingestion processes.
-
-Reducing manual intervention improves data quality while allowing business users to focus on operational tasks instead of administrative work.
-
----
+Manual data entry is replaced by scheduled ingestion wherever possible, so data quality improves without adding work for business users.
 
 ## 3. Governance Before Analytics
 
-Analytics only become valuable when everyone agrees on the meaning of the underlying data.
-
-Business definitions, ownership, and validation rules should therefore be established before building reports or machine learning models.
-
----
+Definitions, ownership and validation rules are established before reports are built on top of them.
 
 ## 4. Build Once, Reuse Everywhere
 
-Business logic should exist only once.
-
-Transformations should be centralized so that every downstream consumer works with the same validated information.
-
----
+Business logic exists once, in the warehouse or the platform, and every consumer reuses it.
 
 ## 5. Reduce Operational Friction
 
-Technology should simplify existing workflows.
+A system that makes daily work easier gets adopted. A system that adds steps does not, however technically correct it is.
 
-The easier a new system is to use, the faster it becomes part of the organization's daily operations.
+## 6. Every Resource Has an Owner
 
----
+Every service, job, function and dataset belongs to a repository and an owner. A resource without an owner is treated as a finding, not as background noise.
+
+## 7. Least Privilege by Default
+
+Service accounts, users and AI assistants receive the minimum access their task requires, and that access is visible and auditable.
 
 ## Adoption Strategy
 
-The technical platform was introduced together with operational improvements.
-
-Rather than forcing organizational change, adoption was driven by replacing repetitive manual tasks with standardized workflows.
+Adoption was not imposed. It was driven by replacing repetitive manual tasks with standardized workflows, so that each automation also produced cleaner data for the platform.
 
 <p align="center">
   <img src="./diagrams/svg/adoption-strategy.svg" alt="Adoption strategy from automation to trust" width="900">
@@ -130,162 +101,161 @@ Rather than forcing organizational change, adoption was driven by replacing repe
 
 ---
 
-# High-Level Architecture
+# Platform Overview
 
-The solution follows a centralized data platform architecture where operational systems act as data producers while downstream applications consume standardized and governed datasets.
+The ecosystem is organized in layers: source systems, ingestion, a medallion-style warehouse in BigQuery and the consumers built on top of it. Engineering governance applies to every component.
 
 <p align="center">
-  <img src="./diagrams/svg/target-architecture.svg" alt="Target governed data platform architecture" width="950">
+  <img src="./diagrams/svg/platform-ecosystem.svg" alt="Data platform ecosystem: sources, ingestion, warehouse, consumers and governance" width="950">
 </p>
 
-The architecture separates operational systems from analytical consumers.
+## 1. Data Warehouse
 
-Instead of allowing each department to maintain its own transformation logic, every downstream system consumes standardized datasets generated from a common platform.
+The warehouse follows a medallion-style separation. Landed source data lives in an isolated project, separate from the curated, governed datasets that reports and applications consume. Separating them at the project level makes access control simpler: most users and services never need to see raw data.
 
-This approach improves consistency, reduces maintenance effort, and creates a scalable foundation for future data products.
+Ingestion pipelines run as containerized Cloud Run Jobs, built and deployed through CI. They cover:
 
----
+- **Settlements.** The pipeline first reads the canonical list of open shows from the internal platform, then retrieves their settlements from the external platform.
+- **Expenses.** Expense reports, expenses, funds and policies from the expense management tool.
+- **Central bank indicators.** Exchange rates and economic indicators used in financial reporting.
+- **ERP.** Accounting entries, chart of accounts, business partners, projects, cost centers and purchasing documents, loaded as full reloads with row-count validation.
+- **Ticketing.** Sales data from the ticketing providers, currently being consolidated into its own governed repository.
 
-# Migration Strategy
+The Cloud Run pipelines refresh every morning at 07:00 and the ERP sync runs every three hours, which keeps the warehouse current for everything else. One specific report keeps a live spreadsheet path for near-real-time, ad-hoc analysis, which is a deliberate exception and is discussed under trade-offs.
 
-Instead of replacing every operational process simultaneously, the platform evolved through incremental improvements.
+## 2. Internal Platform
 
-Each delivery solved an existing business problem while reinforcing the long-term architecture.
+The internal platform is a web application with a FastAPI backend, a Vue frontend and a Cloud SQL database, deployed to Cloud Run with separate development and production environments. It is used across the company by approximately 70 people.
 
-The migration followed four stages.
+Besides supporting daily workflows such as budgets and show operations, the platform generated something the company never had: quantitative, structured data from the production side of the business. That data now feeds reporting from the same single source as finance.
 
-```mermaid
-flowchart LR
-    A[Fragmented Data Sources] --> B[Centralized Data Ingestion]
-    B --> C[Governed Data Platform]
-    C --> D[Business Applications & Analytics]
-```
+The platform includes scheduled jobs, such as a weekly budget review digest and pre-show notifications, a weekly database backup, and database migrations that run as part of the deployment.
 
-Each stage generated immediate business value while reducing technical debt and increasing organizational adoption.
+Security is reviewed through periodic audits of the codebase. Findings are prioritized by severity and fixed in rounds, covering areas such as authorization and privilege boundaries, session handling, rate limiting and security headers.
 
----
+## 3. Engineering Governance
 
-# Implementation Strategy
+There was no GitHub organization, no code review and no deployment process. I created the organization and defined the rules that every repository follows today:
 
-Building a Single Source of Truth was not approached as a single migration project.
+- every component has its own repository: platform, warehouse, cost portal and ticketing
+- every change goes through a pull request
+- code owners and branch rulesets enforce review on protected branches
+- CI verifies each change, including a dependency audit that blocks deployments with high-severity vulnerabilities in production dependencies
+- deployments run from GitHub Actions and authenticate to Google Cloud through Workload Identity Federation, so no long-lived service account keys exist
+- each repository documents its data catalog, run schedule, service accounts and a map of every cloud resource to the repository that owns it
 
-Instead, the strategy focused on gradually replacing fragmented processes while continuously increasing the value delivered to business users.
+<p align="center">
+  <img src="./diagrams/svg/change-delivery-flow.svg" alt="Change delivery flow from pull request to Cloud Run through keyless authentication" width="950">
+</p>
 
-Rather than forcing every department to adopt a completely new workflow, each implementation solved an existing operational problem while contributing to a broader architectural vision.
+## 4. Cost and Access Observability
 
-This incremental approach reduced resistance to change and allowed the platform to grow organically.
+A portal built on cloud billing data shows costs, resources, usage and a data dictionary in one place.
 
-The implementation strategy was based on four major pillars.
+Its permissions view answers a question that is hard to answer from the cloud console: who can read or write each BigQuery table? It calculates the effective permission of every user, group and service account on every table by combining project-level IAM, dataset access entries and table-level IAM, and it expands group membership. The view states its own limits explicitly, such as inherited organization-level roles and row-level security, which it does not evaluate.
 
-## 1. Centralize Data
+The portal's service account can read access policies and metadata, but not the data inside the tables. Access to the portal itself is granted per user through identity-provider claims.
 
-The first objective was to eliminate isolated datasets spread across operational systems, spreadsheets and manually maintained reports.
+## 5. Governed AI Access
 
-Data ingestion pipelines consolidated information into a centralized platform where business entities could be modeled consistently.
+AI assistants reach the warehouse through a Model Context Protocol (MCP) server that I built and operate. Each user connects with their own identity, sees exactly what their permissions allow, and can only run read-only queries, with a per-query cost cap. The read-only restriction is enforced by the identity provider's OAuth scope, not only by application code.
 
-Instead of asking which spreadsheet contained the correct information, every process started from the same governed datasets.
-
----
-
-## 2. Standardize Business Logic
-
-Different departments frequently calculated the same business metrics using different transformation rules.
-
-Business logic was progressively centralized so that calculations were implemented once and reused everywhere.
-
-This reduced inconsistencies between reports while significantly lowering long-term maintenance effort.
+This replaced a vendor connector that offered full permissions and no organizational control. It is the technical foundation of the company's AI adoption strategy, which prioritizes governance and secure access before broader rollout.
 
 ---
 
-## 3. Automate Operational Processes
+# Key Engineering Decisions
 
-Automation was never considered the final objective.
+## 1. Decide Ownership by Lifecycle, Not by Runtime
 
-Instead, it became the mechanism for improving data quality while reducing repetitive manual work.
+Where a process runs (Cloud Run, a scheduler or a third-party system) does not decide which repository owns it. The deciding question is whose changes can break it. A pipeline that exists to serve the internal platform lives with the platform; a component with independent value gets its own repository.
 
-Each automated workflow not only removed operational effort, but also generated cleaner and more reliable information for the centralized platform.
+## 2. Separate Raw and Curated Data at the Project Level
 
-As adoption increased, data quality improved naturally because users interacted directly with standardized processes rather than maintaining independent records.
+Isolating landed source data in its own project keeps permissions simple and reduces the chance that a report reads unvalidated data.
 
----
+## 3. Deploy Without Long-Lived Keys
 
-## 4. Enable Future Systems
+Workload Identity Federation lets CI authenticate with short-lived tokens. There are no service account keys to rotate, leak or forget.
 
-The platform was designed as an engineering foundation rather than a reporting solution.
+## 4. Enforce Read-Only AI Access at the Identity Layer
 
-Once trusted datasets became available, new internal applications, dashboards and analytical models could be developed without rebuilding data pipelines for every project.
+Restricting AI assistants through the OAuth scope means that even a bug in the MCP server cannot turn a read into a write.
 
-This significantly reduced the complexity of future software initiatives while allowing different systems to share the same business definitions.
+## 5. Ship Documentation in the Same Pull Request
 
----
+The data catalog, run schedule and resource ownership map are updated in the same pull request as the change they describe. Documentation that lives elsewhere drifts.
 
-# Technology Decisions
+## 6. Keep One Live Spreadsheet Path Where It Earns Its Place
 
-Technology selection followed architectural requirements rather than driving them.
+One report needs near-real-time, ad-hoc analysis that a daily batch cannot provide. Instead of forcing it into the warehouse, the live spreadsheet path was kept deliberately and documented as an exception.
 
-The objective was to prioritize scalability, maintainability and simplicity over adopting technologies solely because they were popular.
+## 7. Define Failure Behavior Explicitly
 
-The platform was intentionally built using a modular architecture where each component had a clearly defined responsibility.
-
-## Cloud Infrastructure
-
-Google Cloud Platform (GCP) was selected as the primary cloud provider to support scalable deployments, managed services and centralized infrastructure.
+The settlements pipeline fails completely if the internal platform is unavailable, instead of loading partial data. Partial failures on individual shows are not retried automatically, to avoid duplicate records; they are reported in the run summary for review.
 
 ---
 
-## Backend
+# Operational Findings
 
-The backend was implemented in Python following an API-first architecture responsible for:
+Building the governance layer surfaced problems that would otherwise have stayed invisible:
 
-- business logic
-- authentication and authorization
-- workflow orchestration
-- scheduled processes
-- data access
-
----
-
-## Frontend
-
-A modern web interface was developed to provide a consistent user experience across operational areas while reducing dependence on spreadsheets and manual processes.
-
----
-
-## Database
-
-A centralized relational database became the operational foundation of the platform.
-
-Application data, workflows and business entities were modeled around shared definitions instead of department-specific structures.
-
----
-
-## CI/CD
-
-Deployment pipelines were fully automated using GitHub Actions.
-
-Separate deployment workflows supported development and production environments, allowing new features to be validated before production releases.
+- **Resources without an owner.** An inventory of all compute resources across the cloud projects found services and functions that had been deployed by hand, with no repository. Each one was assigned an owner, moved into a repository or deleted.
+- **Accumulated ephemeral jobs.** Database migration jobs created during deployments were supposed to be deleted after each run, but the cleanup step did not always execute. 139 leftover jobs were purged, and the gap was documented.
+- **Documentation drift.** The documented schedule for one pipeline did not match the real one. It was corrected, and that mismatch is the main reason documentation now ships in the same pull request.
+- **Dependency vulnerabilities.** The CI audit blocked a deployment because of a high-severity vulnerability in a transitive dependency. It was fixed with a minimal lockfile update, and the remaining moderate findings were accepted with a written rationale instead of a breaking downgrade.
 
 ---
 
 # Results
 
-The objective of the initiative extended beyond centralizing data.
+## Baseline
 
-The primary outcome was establishing a trusted foundation capable of supporting future operational and analytical systems.
+There was no data warehouse, no internal platform, no structured production data and no engineering process. The only data available was in disconnected spreadsheets with different structures.
 
-The resulting platform enabled:
+## What Exists Now
 
-- a centralized source of business information
-- standardized business definitions across departments
-- reusable data pipelines
-- reduced dependence on manually maintained spreadsheets
-- improved data accessibility
-- faster development of internal applications
-- a scalable foundation for future machine learning initiatives
+- A single source of truth that integrates five source domains: the ERP, the settlement platform, ticketing providers, expense management and central bank indicators.
+- An internal platform used across the company by approximately 70 people.
+- For the first time, quantitative data from the production side of the business, available from the same source as financial data.
+- A warehouse refreshed every morning, plus a deliberate near-real-time path for the one report that needs it.
+- Engineering standards that every component follows: pull-request-based change control, code owners, CI with dependency auditing, keyless deployment and a resource ownership map.
+- Visibility into cloud costs and into who can access each table.
+- Governed, read-only AI access to company data.
 
-Although technology played a fundamental role, the greatest impact came from reducing organizational friction around data consumption.
+## The One Direct Comparison
 
-Teams gradually shifted from maintaining independent datasets to consuming shared, governed information.
+Recurring report processing went from hours of manual consolidation to minutes.
+
+The more important effect was how that time was used. Instead of running to produce numbers, the team now spends it improving the reports and reviewing the data before it is delivered. Report quality and trust in the data improved without adding processing time.
+
+---
+
+# Trade-Offs and Risks
+
+## A Single Engineer
+
+The whole function depends on one person. Governance, documentation and keyless automation reduce that risk, because the system can be understood and rebuilt from its repositories, but they do not remove it. This is the most important open risk of the platform.
+
+## Legacy ERP Synchronization
+
+The ERP sync still runs on a Windows scheduler on an internal machine instead of in the cloud, outside the standard delivery flow. It works, but it is the least observable pipeline.
+
+## Ticketing Ingestion Before Governance
+
+Part of the ticketing ingestion predates the governance model and is being moved into its own repository.
+
+## Full Reloads
+
+Several pipelines truncate and reload their tables. This is simple and easy to validate at the current data volume, but cost and runtime will grow with it.
+
+## Two Paths for One Report
+
+The live spreadsheet path and the daily warehouse can diverge. It is accepted because that report needs fresher data than a daily batch provides, and the exception is documented.
+
+## Coupling Between Platform and Warehouse
+
+The settlements pipeline reads from the internal platform's database. Schema changes in the platform can break the pipeline, so they are coordinated explicitly between both repositories.
 
 ---
 
@@ -293,76 +263,53 @@ Teams gradually shifted from maintaining independent datasets to consuming share
 
 ## 1. Technology Is Rarely the Hardest Problem
 
-Building pipelines, databases and applications is usually the simplest part of a data transformation initiative.
+Building pipelines and applications was the simpler part. Building enough trust that people stopped maintaining their own spreadsheets took longer.
 
-Building trust is significantly harder.
+## 2. In a Greenfield, Standards Are the Deliverable
 
-Without confidence in the underlying data, even technically excellent platforms struggle to gain adoption.
+With nothing to compare against, the most durable outcome is not any single pipeline but the rules every future component will follow.
 
----
+## 3. An Inventory Is a Security Control
 
-## 2. User Adoption Starts With Solving Daily Problems
+Resources that nobody knows about cannot be secured, patched or paid for consciously. The resource ownership map found more risk than any code review.
 
-People rarely adopt a new platform because it is technically superior.
+## 4. Documentation Drifts Unless It Ships With the Change
 
-They adopt it because it makes their work easier.
+Every documentation error found during this work came from documentation written separately from the change it described.
 
-Automating repetitive tasks, reducing manual reporting effort and simplifying operational workflows proved to be stronger adoption drivers than technical improvements alone.
+## 5. AI Governance Starts With Identity
 
----
-
-## 3. Data Governance Should Not Be an Afterthought
-
-Governance is often introduced after reports and dashboards have already been built.
-
-In practice, defining ownership, business rules and common terminology early reduces technical debt and prevents duplicated business logic from spreading across the organization.
-
----
-
-## 4. Every Automation Is Also a Data Product
-
-Every automated workflow generates structured information.
-
-When designed correctly, operational automations become reliable producers of high-quality business data rather than isolated productivity tools.
-
----
-
-## 5. Platforms Should Enable Future Development
-
-The greatest value of a centralized platform is not the reports it produces today.
-
-Its long-term value lies in enabling future applications, analytical models and automation initiatives without rebuilding the data foundation.
+Safe AI access to company data was not achieved through prompts. It came from identity, scopes and the same permission model that applies to people.
 
 ---
 
 # What I Would Do Differently Today
 
-Looking back, several aspects of the implementation could be improved.
+## Measure From Day One
+
+Because no baseline was captured, most results can only be described as capabilities created. Recording simple metrics before the first pipeline, such as hours spent on reports, number of active spreadsheets and report lead time, would have made the impact measurable.
+
+## Create the Ownership Map Before the First Deployment
+
+The inventory came after resources already existed. Starting with it would have prevented orphaned resources entirely.
 
 ## Introduce Data Contracts Earlier
 
-Clearly defining ownership, schemas and validation rules at the beginning of the project would reduce downstream maintenance and simplify onboarding for future systems.
+Explicit contracts between the internal platform and the warehouse would replace manual coordination of schema changes.
+
+## Automate Drift Detection
+
+A scheduled check comparing deployed resources against the ownership map would catch manual deployments and leftover jobs automatically.
+
+## Plan for the Second Engineer Earlier
+
+Documentation and automation were designed so someone else could take over. Making that an explicit organizational goal sooner would reduce the single-engineer risk faster.
 
 ---
 
-## Measure Adoption Explicitly
+# Next Steps
 
-Technical metrics alone do not reflect the success of a data platform.
-
-Tracking user adoption, process replacement and operational improvements would provide a more complete view of platform maturity.
-
----
-
-## Invest Earlier in Documentation
-
-Architecture documentation, operational playbooks and engineering standards become increasingly valuable as platforms grow.
-
-Producing them earlier would accelerate onboarding and reduce knowledge concentration.
-
----
-
-## Design for AI From Day One
-
-Modern enterprise platforms should not only support reporting and analytics.
-
-They should expose well-governed, structured data that can safely power AI assistants, intelligent workflows and future machine learning applications.
+- Consolidate ticketing ingestion into its own governed repository.
+- Move the ERP synchronization into the standard cloud delivery flow.
+- Formalize data contracts between the internal platform and the warehouse.
+- Expand governed AI access as the company's AI adoption progresses.
