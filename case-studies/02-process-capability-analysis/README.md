@@ -19,6 +19,12 @@ Rather than replacing a full commercial statistical suite, the objective was to 
 
 ---
 
+# Related Repository
+
+**[sspratz96/Process-Capability-Analysis-App](https://github.com/sspratz96/Process-Capability-Analysis-App)**: a public version of the Streamlit application described in this case study, including normal and non-normal capability analysis and Monte Carlo scenario simulation.
+
+---
+
 # Context
 
 Before this project, I had already developed several automation tools at Olympus EMEA.

@@ -31,6 +31,12 @@ A model only creates operational impact when the organization trusts it, monitor
 
 ---
 
+# Related Repository
+
+**[sspratz96/demand-forecasting-lightgbm-demo](https://github.com/sspratz96/demand-forecasting-lightgbm-demo)**: a public, reproducible demo of the modeling approach described in this case study, using synthetic store-SKU data. It compares a rule-based baseline with progressively richer LightGBM feature sets and contains no proprietary data, business rules or company-specific logic.
+
+---
+
 # Context
 
 Fork operated a production planning process that needed to estimate how much demand could be expected across multiple stores and products.

@@ -49,6 +49,12 @@ The project demonstrates how clear problem framing and proportional architecture
 
 ---
 
+# Related Repository
+
+**[sspratz96/mi-almanaque-personal](https://github.com/sspratz96/mi-almanaque-personal)**: the application's source code. Personal data is never stored in the repository; it stays in the user's browser unless Google Drive synchronization is enabled.
+
+---
+
 # Context
 
 For years, I had difficulty maintaining a single planning system.
