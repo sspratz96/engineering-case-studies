@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 480" width="1240" height="480" font-family="Arial, Helvetica, sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker></defs>
+<rect width="1240" height="480" fill="#ffffff"/>
+<text x="620.0" y="56" text-anchor="middle" font-size="28" font-weight="bold" fill="#1f2328">From Literature Study to Thesis</text>
+<rect x="24" y="96" width="1192" height="208" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="116" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">RESEARCH ARC</text>
+<rect x="24" y="320" width="1192" height="100" rx="10" fill="#fcfcfd" stroke="#e5e7eb"/>
+<text x="38" y="340" font-size="12" font-weight="bold" letter-spacing="1" fill="#4b5563">QUESTION CARRIED FORWARD</text>
+<path d="M312.0,208.0 L336.0,208.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M608.0,208.0 L632.0,208.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<path d="M904.0,208.0 L928.0,208.0" fill="none" stroke="#4b5563" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="42" y="135" width="272" height="152" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="132" width="272" height="152" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="176.0" y="178.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Current Topics in Data Eng.</text>
+<text x="176.0" y="198.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">Dec 2023 · literature study</text>
+<text x="176.0" y="215.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">self-supervised ViT latent</text>
+<text x="176.0" y="232.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">space vs FID to grade</text>
+<text x="176.0" y="249.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">generated medical images</text>
+<rect x="338" y="135" width="272" height="152" rx="8" fill="#e6e8ec"/>
+<rect x="336" y="132" width="272" height="152" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="472.0" y="178.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Advanced Project I</text>
+<text x="472.0" y="198.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">Jun 2024 · study and proposal</text>
+<text x="472.0" y="215.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">explaining multi-head attention;</text>
+<text x="472.0" y="232.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">proposes activation maximization</text>
+<text x="472.0" y="249.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">and a frequency penalty</text>
+<rect x="634" y="135" width="272" height="152" rx="8" fill="#e6e8ec"/>
+<rect x="632" y="132" width="272" height="152" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="768.0" y="178.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Advanced Project II</text>
+<text x="768.0" y="198.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">Jan 2025 · experiments</text>
+<text x="768.0" y="215.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">custom loss functions on</text>
+<text x="768.0" y="232.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">CNNs (vanilla, ResNet50,</text>
+<text x="768.0" y="249.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">EfficientNetB0, MobileNetV2)</text>
+<rect x="930" y="135" width="272" height="152" rx="8" fill="#e6e8ec"/>
+<rect x="928" y="132" width="272" height="152" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="1064.0" y="178.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Master Thesis</text>
+<text x="1064.0" y="198.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">May 2025 · experiments</text>
+<text x="1064.0" y="215.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">custom loss + activation</text>
+<text x="1064.0" y="232.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">maximization on a ViT-B/16</text>
+<text x="1064.0" y="249.0" text-anchor="middle" font-size="13" font-weight="normal" fill="#4b5563">for DeepFake detection</text>
+<rect x="42" y="355" width="272" height="52" rx="8" fill="#e6e8ec"/>
+<rect x="40" y="352" width="272" height="52" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="176.0" y="382.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Can a ViT latent space judge realism?</text>
+<rect x="338" y="355" width="272" height="52" rx="8" fill="#e6e8ec"/>
+<rect x="336" y="352" width="272" height="52" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="472.0" y="382.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Can attention be explained?</text>
+<rect x="634" y="355" width="272" height="52" rx="8" fill="#e6e8ec"/>
+<rect x="632" y="352" width="272" height="52" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="768.0" y="382.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Can training steer the focus?</text>
+<rect x="930" y="355" width="272" height="52" rx="8" fill="#e6e8ec"/>
+<rect x="928" y="352" width="272" height="52" rx="8" fill="#f6f7f9" stroke="#d4d7dd" stroke-width="1.2"/>
+<text x="1064.0" y="382.0" text-anchor="middle" font-size="15" font-weight="bold" fill="#1f2328">Does it work on a ViT?</text>
+<text x="620.0" y="462" text-anchor="middle" font-size="13" font-style="italic" fill="#4b5563">Each project narrowed the question left open by the previous one.</text>
+</svg>

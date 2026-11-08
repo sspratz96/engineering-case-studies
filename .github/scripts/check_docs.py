@@ -21,7 +21,7 @@ for md in ROOT.rglob("*.md"):
             errors.append(f"{md.relative_to(ROOT)}:{line}: broken link -> {target}")
 
 index = (ROOT / "README.md").read_text(encoding="utf-8")
-for group in ("case-studies", "technical-projects"):
+for group in ("case-studies", "research", "technical-projects"):
     folder = ROOT / group
     if not folder.is_dir():
         continue

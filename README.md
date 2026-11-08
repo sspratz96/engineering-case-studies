@@ -21,6 +21,7 @@ The goal is to share the engineering thinking behind building data platforms, au
 - Product Engineering
 - Local-First Applications
 - Sensor Data Acquisition
+- Computer Vision and Explainable AI
 
 ---
 
@@ -44,6 +45,12 @@ The goal is to share the engineering thinking behind building data platforms, au
 | 06 | [Modularizing a Legacy Recipe and Nutrition System](./case-studies/06-modularizing-legacy-recipe-nutrition-system/) | Completed v1.0 | Python automation, BigQuery, recipe data modeling |
 | 07 | [Financial Reporting Automation Postmortem](./case-studies/07-financial-reporting-automation-postmortem/) | Completed v1.0 | Financial reporting, automation, scope management |
 | 10 | [Building a Privacy-First Personal Productivity System](./case-studies/10-privacy-first-personal-productivity-system/) | In Production | Local-first architecture, PWA, browser storage, AI-assisted development |
+
+## Research
+
+| Project | Status | Focus |
+|---|---|---|
+| [Explainable DeepFake Detection with Vision Transformers](./research/explainable-deepfake-detection-vision-transformers/) | Completed v1.0 | Explainable AI, Vision Transformers, custom loss functions (MSc thesis) |
 
 ## Technical Projects
 
