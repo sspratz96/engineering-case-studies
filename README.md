@@ -20,6 +20,7 @@ The goal is to share the engineering thinking behind building data platforms, au
 - Operational Analytics and Financial Reporting
 - Product Engineering
 - Local-First Applications
+- Sensor Data Acquisition
 
 ---
 
@@ -43,6 +44,12 @@ The goal is to share the engineering thinking behind building data platforms, au
 | 06 | [Modularizing a Legacy Recipe and Nutrition System](./case-studies/06-modularizing-legacy-recipe-nutrition-system/) | Completed v1.0 | Python automation, BigQuery, recipe data modeling |
 | 07 | [Financial Reporting Automation Postmortem](./case-studies/07-financial-reporting-automation-postmortem/) | Completed v1.0 | Financial reporting, automation, scope management |
 | 10 | [Building a Privacy-First Personal Productivity System](./case-studies/10-privacy-first-personal-productivity-system/) | In Production | Local-first architecture, PWA, browser storage, AI-assisted development |
+
+## Technical Projects
+
+| Project | Status | Focus |
+|---|---|---|
+| [Edge-to-Log Security Event Acquisition](./technical-projects/edge-to-log-security-event-acquisition/) | Completed v1.0 | Sensor data acquisition, embedded state machine, serial event logging |
 
 **Status** describes the project itself: *In Progress* means the system is still evolving, and *Internal Development* means it has not been launched publicly yet, and *In Production* means it is live and in daily use. No case study reports usage or production metrics that do not exist.
 
